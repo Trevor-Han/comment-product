@@ -1,0 +1,407 @@
+html {
+    color: #333;
+    /*规定主色调,依据业务场景(非必须)*/
+    background: #ffffff;
+    /*规定主背景,依据业务场景(非必须)*/
+    overflow-y: auto;
+    /*如果有溢出自动形成滚动条*/
+    -webkit-text-size-adjust: 100%;
+    /*不想让iPhone横坚屏切换的时候调节文字*/
+    -ms-text-size-adjust: 100%;
+}
+
+html * { /*所有元素*/
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*去除移动端开发点击事件灰色背景如a标签*/
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+    min-width: 1000px;
+}
+html{
+    overflow-x: hidden;
+}
+a,
+article,
+aside,
+blockquote,
+body,
+button,
+code,
+dd,
+details,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+pre,
+section,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei UI";
+    color: #303233;
+}
+
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: none;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+q:after,
+q:before {  /*在<q></q>标签之间的文字两头加上引号*/
+    content: '';
+}
+
+a{
+    text-decoration: none;
+}
+
+/*input*/
+button {
+    border: none;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+    -webkit-appearance: button;  /*渲染成button的风格*/
+    text-transform: none;
+    outline: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #999;  /*输入框提示语的字体样式*/
+}
+
+input::-webkit-inner-spin-button {/*解决input的type="number"在部分手机端会出现一个小按钮*/
+    -webkit-appearance: none;/*去除系统默认appearance的样式,常用于IOS下移除原生样式*/
+}
+
+input::-webkit-outer-spin-button {/*解决input的type="number"在部分手机端会出现一个小按钮*/
+    -webkit-appearance: none;
+}
+
+textarea {
+    vertical-align: top;
+}
+
+button,
+input {
+    line-height: normal;
+}
+
+select {
+    margin: 0;
+    outline: 0;
+}
+
+input.fixAKeyboard:focus,
+textarea.fixAndroidKeyboard:focus {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+button,
+input[type=button],
+input[type=checkbox],
+input[type=reset],
+input[type=submit],
+label {
+    cursor: pointer;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+input[type=submit] {
+    -webkit-user-modify: read-plaintext-only;
+    -moz-user-modify: read-plaintext-only;
+    -ms-user-modify: read-plaintext-only;
+    -o-user-modify: read-plaintext-only;
+    user-modify: read-plaintext-only;
+}
+
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+input[type='search'] {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-appearance: textfield;
+}
+
+
+/*flex box*/
+.flex {
+    display: box;
+    /* OLD - Android 4.4- */
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    -webkit-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.justify-between {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.justify-center {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.vertical {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box; /*所有元素以border开始计算盒子大小*/
+}
+
+.clearfix:after,
+.clearfix:before {   /*清除浮动*/
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+.my-bullet {
+    width: 50px;
+    height: 8px;
+    display: inline-block;
+    background: #333333;
+    opacity: 0.2;
+    margin-right: 1%;
+    margin-bottom: 2%;
+}
+.my-bullet-active {
+    opacity: 1;
+    background: #00a125;
+}
+.my-bullet2 {
+    width: 50px;
+    height: 8px;
+    display: inline-block;
+    background: #333333;
+    opacity: 0.2;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+.my-bullet-active2 {
+    opacity: 1;
+    background: #00a125;
+}
+/*屏幕小于1200px时的适配*/
+@media screen and (max-width:1200px){
+    .header-con,.mainNav-con,.news-con,.articles-title,.product-con,.recommend-con,
+    .news-details-con,.thematic-con,.Navigation-bar-center,.news-list-con,
+    .product-details-con,.description-con
+    {
+        width: 90%!important;
+    }
+    .mainNav .mainNav-con .mainNav-right ul li{
+        margin-left: 16px!important;
+    }
+    /**************↓↓↓产品详情页适配↓↓↓********************/
+    .description-right{
+        width: 500px!important;
+    }
+    .description-left{
+        width: 500px!important;
+        height: 500px!important;
+    }
+    .description-left .swiper-container{
+        width: 500px!important;
+        height: 388px!important;
+    }
+    .product-description .description-con .description-left #gallery-thumbs .swiper-wrapper {
+        height: 90px!important;
+    }
+    .product-description .description-con .description-left #gallery-thumbs .swiper-button-prev,
+    .product-description .description-con .description-left #gallery-thumbs .swiper-button-next{
+        top:86%!important;
+        height: 90px!important;
+    }
+    .product-description .description-con .description-right .description-title h1{
+        font-size: 26px!important;
+    }
+
+    /**************↓↓↓新闻列表↓↓↓********************/
+    .news-list .news-list-con .news-item .news-point-content .news-content .news-content-word {
+        width: 60%!important;
+    }
+
+    /**************↓↓↓产品列表↓↓↓********************/
+    .product-details .product-details-con .product-details-list ul li a .pro-img {
+        width: 230px!important;
+        height: 203.6px!important;
+    }
+}
+@media screen and (max-width:1124px){
+
+    /**************↓↓↓产品详情页适配↓↓↓********************/
+    .description-right{
+        width: 450px!important;
+    }
+    .description-left{
+        width: 450px!important;
+        height: 460px!important;
+    }
+    .description-left .swiper-container{
+        width: 450px!important;
+        height: 349.2px!important;
+    }
+    .product-description .description-con .description-right .description-title h1{
+        font-size: 22px!important;
+    }
+    .details-con .details-con-right .contact-us .content-phone {
+        padding: 20px 20px!important;
+    }
+
+    /**************↓↓↓头部↓↓↓********************/
+    .mainNav .mainNav-con .mainNav-right ul li a{
+        font-size: 12px!important;
+    }
+    .header .header-con .header-right ul li{
+        margin-left: 10px!important;
+    }
+    .header .header-con .header-right ul li a {
+        font-size: 12px!important;
+    }
+    .header .header-con .header-right ul li span {
+        left: 60px!important;
+    }
+
+    /**************↓↓↓专题报告↓↓↓********************/
+    .news .thematic-topics .thematic-con .thematic-list {
+        height: 370px!important;
+    }
+    /**************↓↓↓新闻列表↓↓↓********************/
+    .news-list .news-list-con .news-item .news-point-content .news-content .news-content-word {
+        width: 55%!important;
+    }
+    .news-list .news-list-con .news-item .news-point-content .news-content .news-content-word .news-data {
+        font-size: 12px!important;
+    }
+    .news-list .news-list-con .news-item .news-point-content .news-content .news-content-word .news-data p {
+        margin-right: 10px!important;
+    }
+
+    /**************↓↓↓产品列表↓↓↓********************/
+    .product-details .product-details-con .product-details-list{
+        height: 250px!important;
+    }
+    .product-details .product-details-con .product-details-list ul li a .pro-img {
+        width: 190px!important;
+        height: 168.15px!important;
+    }
+    .product-details .product-details-con .product-details-list ul li a {
+        font-size: 16px!important;
+    }
+    .product-details .product-details-con .product-details-list ul li a .product-hover {
+        width: 250px!important;
+    }
+    .product-details .product-details-con .product-details-list ul li a .product-hover .product-feature ul li {
+        font-size: 12px!important;
+    }
+    .product-details .product-details-con .product-details-list ul li a .product-hover h1 {
+        font-size: 16px!important;
+    }
+
+}
