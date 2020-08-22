@@ -1799,8 +1799,91 @@
               height: 280px;
               background: #fafafa;
               margin-right: 8px;
+              position: relative;
+              overflow: hidden;
               &:nth-of-type(2n){
                 margin-right: 0;
+              }
+              .the-case-img{
+                width: 100%;
+                height: 162.5px;
+                padding: 14px;
+                overflow: hidden;
+                img{
+                  width: 100%;
+                }
+              }
+              .the-case-mask{
+                width: 100%;
+                height: 153px;
+                position: absolute;
+                bottom: -60px;
+                background: #fafafa;
+                padding: 12px;
+                transition: all 0.5s;
+                h1{
+                  font-size: 15px;
+                  color: #303233;
+                  margin-bottom: 8px;
+                }
+                p{
+                  line-height: 20px;
+                  font-size: 15px;
+                  color: #888;
+                }
+              }
+              .t-mask{
+                width: 100%;
+                height: 40px;
+                margin-top: 15px;
+                .mask-left{
+                  width: 50%;
+                  height: 100%;
+                  .mask-img{
+                    position: relative;
+                    .mask-img-in{
+                      width: 36px;
+                      height: 36px;
+                      border-radius: 50%;
+                      background: #000;
+                      overflow: hidden;
+                      img{
+                        max-width: 120%;
+                        display: block;
+                        margin: 0 auto;
+                      }
+                    }
+                    i{
+                      position: absolute;
+                      width: 14px;
+                      height: 14px;
+                      left: 24px;
+                      bottom: 0;
+                      background: url("../images/article/font-v.png") no-repeat center center / cover;
+                    }
+                  }
+                  .mask-word{
+                    p{
+                      font-size: 12px;
+                      color: #888;
+                    }
+                  }
+                }
+                .mask-right{
+                  width: 50%;
+                  height: 100%;
+                  span{
+                    width: 100%;
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #888;
+                    text-align: right;
+                    line-height: 40px;
+                  }
+                }
+              }
+              &:hover the-case-mask{
+                bottom: 0;
               }
             }
           }
