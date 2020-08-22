@@ -82,7 +82,6 @@ $(function () {
             swiper: galleryThumbs
         },
     });
-
     // 产品推荐
     let productRecommendation = new Swiper(".recommendation-list .swiper-container",{
         autoplay:true,
@@ -96,5 +95,19 @@ $(function () {
         observer:true,
         observeParents:true,
     });
-
+    //灯具使用
+    let dengRec = new Swiper(".deng-rec .swiper-container",{
+        autoplay:true,
+        loop:true,
+        spaceBetween: 0,
+        speed: 1000,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable :true,
+            bulletClass : 'my-bullet',
+            bulletActiveClass: 'my-bullet-active',
+        },
+        observer:true,
+        observeParents:true,
+    })
 });
