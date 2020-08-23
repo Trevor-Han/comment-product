@@ -1742,7 +1742,7 @@
             }
             p{
               font-size: 15px;
-              line-height: 2;
+              line-height: 30px;
               color: #525252;
               +p{
                 margin-top: 16px;
@@ -1778,6 +1778,9 @@
                   padding: 8px 22px;
                   font-size: 14px;
                   color: #888;
+                  &:hover{
+                    color: #00bebe;
+                  }
                 }
               }
             }
@@ -1796,11 +1799,13 @@
               margin-top: 16px;
               float: left;
               width: 244px;
-              height: 280px;
+              height: 260px;
               background: #fafafa;
               margin-right: 8px;
               position: relative;
               overflow: hidden;
+              border: 1px solid #fafafa;
+              box-sizing: border-box;
               &:nth-of-type(2n){
                 margin-right: 0;
               }
@@ -1882,7 +1887,10 @@
                   }
                 }
               }
-              &:hover the-case-mask{
+              &:hover{
+                border: 1px solid #00bebe;
+              }
+              &:hover .the-case-mask{
                 bottom: 0;
               }
             }

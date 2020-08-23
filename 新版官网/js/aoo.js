@@ -12,68 +12,87 @@ $(function () {
         $mainLi.hover(function () {
             let mainIndex = $(this).index();
             let $downMenuCount = $(".dropdown>div").eq(mainIndex);
-            $(".dropdown").css("display","block");
+            $(".dropdown").css("display", "block");
             $downMenuCount.addClass("dropdown-status").siblings().removeClass("dropdown-status");
         });
-        $downMenuMove.on("mouseleave",function () {
+        $downMenuMove.on("mouseleave", function () {
             $(".dropdown-menu").removeClass("dropdown-status");
-            $(".dropdown").css("display","none");
+            $(".dropdown").css("display", "none");
         });
 
     }
+
     //导航栏子菜单产品列表hover效果
     function dropDownHover() {
         let $downMenu = $(".dropdown-menu");
-        $downMenu.on("mouseenter",".dropdown-product",function () {
+        $downMenu.on("mouseenter", ".dropdown-product", function () {
             let downIndex = $(this).index();
             let $downList = $(this).parent(".dropdown-left").next(".dropdown-right").children(".dropdown-list").eq(downIndex);
             $downList.addClass("list-block").siblings().removeClass("list-block");
             $(this).addClass("scroll-bar").siblings().removeClass("scroll-bar");
         })
     }
+
     //导航栏的吸顶效果
     function headerScroll() {
         let headHeight = $(".header").height();
         $(window).scroll(function () {
-            let offsetY = $("body").scrollTop()+$("html").scrollTop();
+            let offsetY = $("body").scrollTop() + $("html").scrollTop();
             // $(".dropdown").css("display","none");
             if (offsetY >= headHeight) {
                 $(".mainNav").css({
-                    position:"fixed",
-                    top:0,
-                    zIndex:"9999"
+                    position: "fixed",
+                    top: 0,
+                    zIndex: "9999"
                 });
-                $(".banner").css("margin-top","100px");
-                $(".banner-other").css("margin-top","100px");
-                $(".dropdown").css("margin-top","60px");
+                $(".banner").css("margin-top", "100px");
+                $(".banner-other").css("margin-top", "100px");
+                $(".dropdown").css("margin-top", "60px");
 
-            }else {
+            } else {
                 $(".mainNav").css({
-                    position:"relative",
-                    top:"auto"
+                    position: "relative",
+                    top: "auto"
                 });
-                $(".banner").css("margin-top","0px");
-                $(".banner-other").css("margin-top","0px");
-                $(".dropdown").css("margin-top","0px");
+                $(".banner").css("margin-top", "0px");
+                $(".banner-other").css("margin-top", "0px");
+                $(".dropdown").css("margin-top", "0px");
             }
         });
     }
+
     //产品列表hover效果
     function productHover() {
         $nth.hover(function () {
             $(this).addClass("m2");
-            $(this).css("z-index","499");
-        },function () {
-            $(this).css("z-index","299");
+            $(this).css("z-index", "499");
+        }, function () {
+            $(this).css("z-index", "299");
         });
     }
 
-    let recommendTitle = [
-
-    ];
     $(".recommend-left-other>ul>li").click(function () {
-       let recommendIndex = $(this).index();
-       let $recommendRight = $(".recommend-fade .recommend-right").eq(recommendIndex);
+        let recommendIndex = $(this).index();
+        let $recommendRight = $(".recommend-fade .recommend-right").eq(recommendIndex);
         $recommendRight.addClass("recommend-block").siblings().removeClass("recommend-block");
+    });
+
+    $(".font_down").click(function () {
+        $(".article-content p").css({
+            fontSize: "14px",
+            lineHeight: "26px",
+        });
+    });
+    $(".font_default").click(function () {
+        $(".article-content p").css({
+            fontSize: "15px",
+            lineHeight: "30px",
+        });
+    });
+    $(".font_up").click(function () {
+        $(".article-content p").css({
+            fontSize: "17px",
+            lineHeight: "32px",
+        });
     });
 });
