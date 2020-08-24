@@ -24,23 +24,19 @@
       position: relative;
       ul{
         position: absolute;
-        display: block;
+        height: 35px;
         right: 0;
         li{
-          display:inline-block;
-          text-align:justify;
-          margin-left: 16px;
-          line-height: 28px;
-          position: relative;
-          span{
-            font-size: 14px;
-            color: #999;
-            position: absolute;
-            left: 63px;
-            top:3px;
-          }
+          float: left;
+          line-height: 35px;
+          font-size: 12px;
+          color: #999;
           a{
+            display: inline-block;
             font-size: 14px;
+            margin-right: 5px;
+            margin-left: 8px;
+            vertical-align: center;
             color: #999;
             &:hover{
               font-weight: 600;
@@ -51,6 +47,10 @@
       }
     }
   }
+}
+//导航logo标题切换
+.none-p{
+  display: none;
 }
 .mainNav{
   width: 100%;
@@ -84,11 +84,10 @@
           float: left;
           img{
             width: 309px;
-            height: 49px;
             margin-top: -8px;
           }
           p{
-            margin-top: -3px;
+            margin-top: -6px;
             font-size: 14.4px;
             color: #00bebe;
             font-weight: 600;
@@ -97,8 +96,16 @@
         .logo-right{
           float: right;
           padding-left: 6px;
-          margin-left: 6px;
-          border-left: 2px solid #999;
+          margin-left: 6px;position: relative;
+          &:after{
+            position: absolute;
+            content: "";
+            width: 2px;
+            height: 94%;
+            background: #999;
+            top: 0;
+            left: 0;
+          }
           h1{
             font-size: 18px;
             color: #888;
@@ -106,7 +113,6 @@
             line-height: 20px;
             span{
               display: block;
-              margin-top: 3px;
               font-size: 12px;
               color: #999;font-weight: 400;
               letter-spacing: 0;
@@ -121,7 +127,7 @@
       .main-phone{
         position: absolute;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 32px;
         p{
           font-size: 18px;
           color: #00bebe;
@@ -138,6 +144,119 @@
           text-align:justify;
           margin-left: 12px;
           margin-top: 55px;
+          position: relative;
+          &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -20%;
+            width: 100%;
+            height: 2px;
+            background: #00bebe;
+            transform: scaleX(0);
+            transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+          }
+          &:hover::after{
+            transform: scaleX(1);
+          }
+          i{
+            position: absolute;
+            top: -5px;
+            right: -30px;
+          }
+          a{
+            font-size: 16px;
+            color: #303233;
+            font-weight: bold;
+            &:hover{
+              color: #00bebe;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//微型导航
+.small-nav{
+  height: 80px;
+  .mainNav-con{
+    margin: 0 auto;
+    .mainNav-left{
+      height: 100%;
+      position: relative;
+      a{
+        position: absolute;
+        left: 0;
+        height: 47px;
+        margin-top: 20px;
+        min-width: 317px;
+        .logo-left{
+          height: 100%;
+          float: left;
+          img{
+            width: 205.78px;
+            margin-top: -8px;
+          }
+          p{
+            margin-top: -6px;
+            font-size: 13px;
+            color: #00bebe;
+            font-weight: 400;
+          }
+        }
+        .logo-right{
+          float: right;
+          padding-left: 6px;
+          margin-left: 6px;
+          &:after{
+            position: absolute;
+            content: "";
+            width: 2px;
+            height: 95%;
+            background: #00bebe;
+            top: 0;
+            left: 0;
+          }
+          h1{
+            p{
+              text-align: right;
+              font-size: 16px;
+              color: #00bebe;
+              font-weight: 400;
+            }
+            span{
+              font-size: 18px;
+              color: #00bebe;
+            }
+          }
+        }
+      }
+    }
+    .mainNav-right{
+      height: 100%;
+      position: relative;
+      .main-phone{
+        position: absolute;
+        width: 100%;
+        margin-top: 30px;
+        display: none;
+        p{
+          font-size: 18px;
+          color: #00bebe;
+          text-align: right;
+        }
+      }
+      ul{
+        position: absolute;
+        right: 0;
+        display: block;
+        li{
+          display:inline-block;
+          vertical-align: middle;
+          text-align:justify;
+          margin-left: 12px;
+          margin-top: 20px;
           position: relative;
           &:after{
             content: "";
@@ -1610,23 +1729,25 @@
               }
               i{
                 position: absolute;
-                width: 14px;
-                height: 14px;
+                width: 15px;
+                height: 15px;
                 right: 2px;
                 bottom: 0;
                 background: url("../images/article/font-v.png") no-repeat center center / cover;
               }
             }
-            .portrait-word{
+            .portrait-word {
               float: right;
               margin-top: 13px;
-              h1{
+              margin-left: 12px;
+              h1 {
                 font-size: 14px;
                 color: #303233;
               }
-              p{
-                font-size: 14px;
+              p {
+                font-size: 12px;
                 color: #999;
+                margin: 3px 0;
               }
             }
             .p-motto{
@@ -1691,6 +1812,7 @@
             float: left;
             margin-right: 40px;
             vertical-align: center;
+            cursor: pointer;
             &:last-of-type{
               margin-right: 0;
             }
@@ -1708,7 +1830,7 @@
           }
           .text{
             display: inline-block;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
             border-radius: 10px;
             position: absolute;
@@ -1718,6 +1840,7 @@
             top: 30px;
             right: 20%;
             background: #fff;
+            color: #999;
           }
         }
       }
@@ -1732,7 +1855,7 @@
           .article-content{
             width: 100%;
             .hgroup{
-              margin-bottom: 32px;
+              margin-bottom: 26px;
               position: relative;
               h1{
                 font-size: 23px;
@@ -1742,15 +1865,16 @@
             }
             p{
               font-size: 15px;
-              line-height: 30px;
+              line-height: 26px;
               color: #525252;
+              font-weight: normal;
               +p{
-                margin-top: 16px;
+                margin-top: 15px;
               }
             }
             img{
               width: 100%;
-
+              margin: 7px 0;
             }
           }
           .cont-pager{
@@ -1920,13 +2044,16 @@
               background-size: 80%;
             }
           }
+          &>div{
+            padding: 12px;
+            width: 100%;
+          }
           .p-word{
-           width: 100%;
-           padding: 12px;
            h1{
              font-size: 14px;
              color: #303233;
              line-height: 24px;
+             margin-bottom: 16px;
              i{
                display: inline-block;
                width: 12px;
@@ -1940,18 +2067,18 @@
               font-size: 14px;
               color: #999;
               line-height: 24px;
-              margin-top: 5px;
             }
          }
-         .deng-rec{
-           width: 100%;
-           padding: 12px;
+          .deng-rec{
            .swiper-container{
              width: 100%;
              height: 100%;
              padding-bottom: 40px;
              .deng-in{
                width: 100%;
+               padding-right: 10px;
+               overflow: hidden;
+               cursor: pointer;
                .deng-left{
                  width: 100px;
                  height: 100px;
@@ -1971,18 +2098,16 @@
              }
            }
          }
-         .aoo-energy{
-           width: 100%;
-           padding: 12px;
+          .aoo-energy{
            table{
              width: 100%;
-             border: 1px solid #e5e5e5;
              tr{
                height: 40px;
                background: #fafafa;
                th{
                  font-size: 14px;
                  color: #888;
+                 border: 1px solid #e5e5e5;
                }
              }
            }
@@ -1992,7 +2117,70 @@
              background: #00bebe;
              text-align: center;
              color: #fff;
+             margin-top: 5px;
            }
+          }
+          .general-case{
+            ul{
+              width: 100%;
+              li{
+                clear: both;
+                width: 100%;
+                margin-bottom: 17px;
+                &:last-of-type{
+                  margin-bottom: 0;
+                }
+                .general-case-left{
+                  width: 15%;
+                  h1{
+                    font-size: 30px;
+                    color: #999;
+                    font-weight: bold;
+                  }
+                }
+                .general-case-right{
+                  width: 85%;
+                  a{
+                    display: inline-block;
+                    p {
+                      color: #999;
+                      font-size: 14px;
+                      line-height: 20px;
+                      &:hover {
+                        color: #00bebe;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .cooperate-con1{
+            width: 100%;
+          }
+          .news-articles{
+            ul{
+              width: 100%;
+              li{
+                clear: both;
+                a{
+                  display: inline-block;
+                  width: 100%;
+                  .news-articles-left{
+                    width: 102px;
+                    height: 76.5px;
+                    background: #999;
+                    overflow: hidden;
+                    img{
+                      width: 100%;
+                    }
+                  }
+                  .news-articles-right{
+
+                  }
+                }
+              }
+            }
           }
         }
       }

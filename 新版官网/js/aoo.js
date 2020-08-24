@@ -36,27 +36,38 @@ $(function () {
     //导航栏的吸顶效果
     function headerScroll() {
         let headHeight = $(".header").height();
+        let oMainNav = $(".mainNav");
+        let navBig = $(".mainNav .big");
+        let navSmall = $(".mainNav .small");
         $(window).scroll(function () {
             let offsetY = $("body").scrollTop() + $("html").scrollTop();
             // $(".dropdown").css("display","none");
             if (offsetY >= headHeight) {
-                $(".mainNav").css({
+                oMainNav.css({
                     position: "fixed",
                     top: 0,
                     zIndex: "9999"
                 });
-                $(".banner").css("margin-top", "100px");
-                $(".banner-other").css("margin-top", "100px");
-                $(".dropdown").css("margin-top", "60px");
+                oMainNav.addClass("small-nav");
+                navBig.addClass("none-p");
+                navSmall.removeClass("none-p");
+                $(".banner").css("margin-top", "80px");
+                $(".banner-other").css("margin-top", "80px");
+                $(".dropdown").css("margin-top", "40px");
+
 
             } else {
-                $(".mainNav").css({
+                oMainNav.css({
                     position: "relative",
                     top: "auto"
                 });
+                oMainNav.removeClass("small-nav");
+                navBig.removeClass("none-p");
+                navSmall.addClass("none-p");
                 $(".banner").css("margin-top", "0px");
                 $(".banner-other").css("margin-top", "0px");
                 $(".dropdown").css("margin-top", "0px");
+
             }
         });
     }

@@ -1718,7 +1718,7 @@
 }
 .news-details .news-details-con .details-list .article-center .article-middle-details .article-content p {
   font-size: 15px;
-  line-height: 2;
+  line-height: 30px;
   color: #525252;
 }
 .news-details .news-details-con .details-list .article-center .article-middle-details .article-content p + p {
@@ -1756,6 +1756,9 @@
   font-size: 14px;
   color: #888;
 }
+.news-details .news-details-con .details-list .article-center .article-middle-details .cont-pager .pager-in .pager-right a:hover {
+  color: #00bebe;
+}
 .news-details .news-details-con .details-list .article-center .article-middle-details .other-case {
   margin-top: 32px;
   width: 100%;
@@ -1771,11 +1774,13 @@
   margin-top: 16px;
   float: left;
   width: 244px;
-  height: 280px;
+  height: 260px;
   background: #fafafa;
   margin-right: 8px;
   position: relative;
   overflow: hidden;
+  border: 1px solid #fafafa;
+  box-sizing: border-box;
 }
 .news-details .news-details-con .details-list .article-center .article-middle-details .other-case li:nth-of-type(2n) {
   margin-right: 0;
@@ -1856,7 +1861,10 @@
   text-align: right;
   line-height: 40px;
 }
-.news-details .news-details-con .details-list .article-center .article-middle-details .other-case li:hover the-case-mask {
+.news-details .news-details-con .details-list .article-center .article-middle-details .other-case li:hover {
+  border: 1px solid #00bebe;
+}
+.news-details .news-details-con .details-list .article-center .article-middle-details .other-case li:hover .the-case-mask {
   bottom: 0;
 }
 .news-details .news-details-con .details-list .articles-list {

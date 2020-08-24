@@ -97,9 +97,9 @@ $(function () {
     });
     //灯具使用
     let dengRec = new Swiper(".deng-rec .swiper-container",{
-        autoplay:true,
+        autoplay:false,
         loop:true,
-        spaceBetween: 0,
+        spaceBetween: 10,
         speed: 1000,
         pagination: {
             el: '.swiper-pagination',
@@ -109,5 +109,16 @@ $(function () {
         },
         observer:true,
         observeParents:true,
-    })
+    });
+    //合作企业
+    let cooperate1 = new Swiper(".cooperate-con1 .swiper-container",{
+        autoplay:{
+            delay:2000,
+            disableOnInteraction: false,
+        },
+        loop:true,
+        spaceBetween: 10,
+        speed: 1000,
+        slidesPerView : 2,
+    });
 });
