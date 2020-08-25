@@ -5,8 +5,8 @@ $(function () {
     headerScroll();
     fontClick();
     recommendClick();
-    sideBerFixed(".articles-list",".news-details-con");
-    sideBerFixed(".article-left",".news-details-con");
+    // sideBerFixed(".articles-list",".news-details-con");
+    // sideBerFixed(".article-left",".news-details-con");
 
     //导航栏列表hover效果
     function mainNavHover() {
