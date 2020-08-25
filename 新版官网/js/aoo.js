@@ -1,9 +1,12 @@
 $(function () {
-    let $nth = $(".product-details-list>ul>li:nth-of-type(4n)");
     mainNavHover();
     dropDownHover();
     productHover();
     headerScroll();
+    fontClick();
+    recommendClick();
+    sideBerFixed(".articles-list",".news-details-con");
+    sideBerFixed(".article-left",".news-details-con");
 
     //导航栏列表hover效果
     function mainNavHover() {
@@ -74,6 +77,7 @@ $(function () {
 
     //产品列表hover效果
     function productHover() {
+        let $nth = $(".product-details-list>ul>li:nth-of-type(4n)");
         $nth.hover(function () {
             $(this).addClass("m2");
             $(this).css("z-index", "499");
@@ -82,28 +86,65 @@ $(function () {
         });
     }
 
-    $(".recommend-left-other>ul>li").click(function () {
-        let recommendIndex = $(this).index();
-        let $recommendRight = $(".recommend-fade .recommend-right").eq(recommendIndex);
-        $recommendRight.addClass("recommend-block").siblings().removeClass("recommend-block");
-    });
+    //字体调整
+    function fontClick(){
+        $(".font_down").click(function () {
+            $(".article-content-word p").css({
+                fontSize: "14px",
+                lineHeight: "24px",
+            });
+        });
+        $(".font_default").click(function () {
+            $(".article-content-word p").css({
+                fontSize: "16px",
+                lineHeight: "26px",
+            });
+        });
+        $(".font_up").click(function () {
+            $(".article-content-word p").css({
+                fontSize: "18px",
+                lineHeight: "32px",
+            });
+        });
+    }
 
-    $(".font_down").click(function () {
-        $(".article-content p").css({
-            fontSize: "14px",
-            lineHeight: "26px",
+   //其他产品列表点击
+    function recommendClick() {
+        $(".recommend-left-other>ul>li").click(function () {
+            let recommendIndex = $(this).index();
+            let $recommendRight = $(".recommend-fade .recommend-right").eq(recommendIndex);
+            $recommendRight.addClass("recommend-block").siblings().removeClass("recommend-block");
         });
-    });
-    $(".font_default").click(function () {
-        $(".article-content p").css({
-            fontSize: "15px",
-            lineHeight: "30px",
-        });
-    });
-    $(".font_up").click(function () {
-        $(".article-content p").css({
-            fontSize: "17px",
-            lineHeight: "32px",
-        });
-    });
+    }
+
+   //侧边栏固定
+   function sideBerFixed(obj,all) {
+       let articlesList = $(obj);
+       let sideOffset = articlesList.offset().top;
+       let allHeight = $(all).height();
+       let sideHeight = articlesList.height(); //450 , 908
+       let fixedHeight = allHeight - sideHeight;//1999,1541
+       $(window).scroll(function () {
+           let scroll = $("html,body").scrollTop();
+           let h = scroll - fixedHeight- (sideOffset-122) ;
+           if (scroll > sideOffset-122 && h < 0){
+               articlesList.css({
+                   top: scroll - sideOffset + 122 + 10,
+                   position:"relative",
+               });
+           }
+           else if (h >= 0) {
+               articlesList.css({
+                   top: fixedHeight,
+                   position:"relative",
+               });
+           }
+           else if (scroll < sideOffset-122) {
+               articlesList.css({
+                   top: 0,
+                   position:"relative",
+               });
+           }
+       })
+   }
 });
