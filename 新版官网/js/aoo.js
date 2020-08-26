@@ -5,8 +5,9 @@ $(function () {
     headerScroll();
     fontClick();
     recommendClick();
-    // sideBerFixed(".articles-list",".news-details-con");
-    // sideBerFixed(".article-left",".news-details-con");
+    sideBerFixed(".articles-list",".news-details-con");
+    sideBerFixed(".article-left",".news-details-con");
+
 
     //导航栏列表hover效果
     function mainNavHover() {
@@ -129,8 +130,8 @@ $(function () {
            let h = scroll - fixedHeight- (sideOffset-122) ;
            if (scroll > sideOffset-122 && h < 0){
                articlesList.css({
-                   top: scroll - sideOffset + 122 + 10,
-                   position:"relative",
+                   top:90,
+                   position:"fixed",
                });
            }
            else if (h >= 0) {
