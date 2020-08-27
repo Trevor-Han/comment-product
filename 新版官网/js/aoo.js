@@ -5,8 +5,7 @@ $(function () {
     headerScroll();
     fontClick();
     recommendClick();
-    sideBerFixed(".articles-list",".news-details-con");
-    sideBerFixed(".article-left",".news-details-con");
+    waterfall(".excerpts-box",".excerpts-item");
 
 
     //导航栏列表hover效果
@@ -80,10 +79,19 @@ $(function () {
     function productHover() {
         let $nth = $(".product-details-list>ul>li:nth-of-type(4n)");
         $nth.hover(function () {
-            $(this).addClass("m2");
-            $(this).css("z-index", "499");
+            $(this).css({
+                position:"absolute",
+                zIndex: 499,
+                right:"15px"
+            })
         }, function () {
-            $(this).css("z-index", "299");
+            setTimeout(function () {
+                $nth.css({
+                    position:"relative",
+                    zIndex: 299,
+                    right:0
+                });
+            },1000);
         });
     }
 
@@ -118,34 +126,31 @@ $(function () {
         });
     }
 
-   //侧边栏固定
-   function sideBerFixed(obj,all) {
-       let articlesList = $(obj);
-       let sideOffset = articlesList.offset().top;
-       let allHeight = $(all).height();
-       let sideHeight = articlesList.height(); //450 , 908
-       let fixedHeight = allHeight - sideHeight;//1999,1541
-       $(window).scroll(function () {
-           let scroll = $("html,body").scrollTop();
-           let h = scroll - fixedHeight- (sideOffset-122) ;
-           if (scroll > sideOffset-122 && h < 0){
-               articlesList.css({
-                   top:90,
-                   position:"fixed",
-               });
-           }
-           else if (h >= 0) {
-               articlesList.css({
-                   top: fixedHeight,
-                   position:"relative",
-               });
-           }
-           else if (scroll < sideOffset-122) {
-               articlesList.css({
-                   top: 0,
-                   position:"relative",
-               });
-           }
-       })
-   }
+   //案例节选瀑布流
+    function waterfall(ibox,item) {
+        let pos = [],
+            $items = $(item),
+            fontSize = getComputedStyle(window.document.documentElement)['font-size'].split('px')[0],
+            _box_width = $(ibox).width() / fontSize,
+            _owidth = $items.eq(0).width() / fontSize + .2,
+            _num = Math.floor(_box_width / _owidth);
+        let i = 0;
+        for (; i < _num; i++) {
+            pos.push([i * _owidth, 0]);
+        }
+        $items.each(function () {
+            let _this = $(this),
+                _temp = 0,
+                _height = _this.height() / fontSize + .23;
+
+            for (let j = 0; j < _num; j++) {
+                if (pos[j][1] < pos[_temp][1]) {
+                    _temp = j;
+                }
+            }
+            this.style.cssText = 'left:' + (pos[_temp][0] + .20) + 'rem; top:' + pos[_temp][1] + 'rem;';
+            pos[_temp][1] = pos[_temp][1] + _height;
+            $(ibox).css("height",(pos[_temp][1]+3)+"rem");
+        });
+    }
 });
