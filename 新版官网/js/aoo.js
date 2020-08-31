@@ -154,5 +154,35 @@ $(function () {
         });
     }
 
+    //iframe弹窗层
+    let mask = 0;
+    let $lead = $("<div class=\"modal-title\">\n" +
+        "    <div class=\"h1-mask\">\n" +
+        "        <h1>点击空白<br>区域返回</h1>\n" +
+        "    </div>\n" +
+        "</div>");
+    $('.trigger').click(function (e) {
+        e.preventDefault();
+        $("body").append($lead);
+        layer.open({
+            type: 2,
+            title: 'aoo-led',
+            shadeClose: true,
+            shade: 0.7,
+            area: ['1280px', '100%'],
+            content: $(this).attr('href'),
+            skin: 'demo-class'
+        });
+        $(".layui-layer-shade").click(function () {
+            $lead.remove();
+        });
+        $(".layui-layer-ico").click(function () {
+            $lead.remove();
+        });
+        mask++;
+        if (mask>1){
+            $lead.remove();
+        }
+    });
 
 });

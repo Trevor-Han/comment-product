@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet/less" href="css/style.less">
-    <link rel="stylesheet" href="css/iziModal.css">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -239,7 +238,7 @@
             <ul>
             <li>
                 <div class="cai-dai"></div>
-                <a href="product-description.html" class="trigger-iframe">
+                <a href="product-description.html" class="trigger">
                     <img src="images/product/xingmai.png" alt="星脉2代系列LED工矿灯" class="pro-img">
                     <p class="m-p">星脉2代系列LED工矿灯</p>
                     <div class="product-hover">
@@ -258,7 +257,7 @@
             </li>
             <li>
                 <div class="cai-dai"></div>
-                <a href="product-description.html" class="trigger-iframe">
+                <a href="case-excerpts.html" class="trigger">
                     <img src="images/product/zitong.png" alt="超导紫铜系列LED工矿灯" class="pro-img">
                     <p class="m-p">超导紫铜系列LED工矿灯</p>
                     <div class="product-hover">
@@ -277,7 +276,7 @@
             </li>
             <li>
                 <div class="cai-dai"></div>
-                <a href="product-description.html" class="trigger-iframe">
+                <a href="industry-news-list.html" class="trigger">
                     <img src="images/product/heijingang.png" alt="黑金刚系列LED工矿灯" class="pro-img">
                     <p class="m-p">黑金刚系列LED工矿灯</p>
                     <div class="product-hover">
@@ -296,7 +295,7 @@
             </li>
             <li>
                 <div class="cai-dai"></div>
-                <a href="product-description.html" class="trigger-iframe">
+                <a href="news-list.html" class="trigger">
                     <img src="images/product/taiyang.png" alt="太阳神系列LED塔吊灯" class="pro-img">
                     <p class="m-p">太阳神系列LED塔吊灯</p>
                     <div class="product-hover">
@@ -319,7 +318,7 @@
             <ul>
                 <li>
                     <div class="cai-dai"></div>
-                    <a href="product-description.html" class="trigger-iframe">
+                    <a href="main-case-news.html" class="trigger">
                         <img src="images/product/xingmai.png" alt="星脉2代系列LED工矿灯" class="pro-img">
                         <p class="m-p">星脉2代系列LED工矿灯</p>
                         <div class="product-hover">
@@ -338,7 +337,7 @@
                 </li>
                 <li>
                     <div class="cai-dai"></div>
-                    <a href="product-description.html" class="trigger-iframe">
+                    <a href="articles.html" class="trigger">
                         <img src="images/product/zitong.png" alt="超导紫铜系列LED工矿灯" class="pro-img">
                         <p class="m-p">超导紫铜系列LED工矿灯</p>
                         <div class="product-hover">
@@ -357,7 +356,6 @@
                 </li>
             </ul>
         </div>
-        <div id="modal-iframe" class="iziModal light"></div>
     </div>
 </div>
 <div class="productSeries">
@@ -1080,37 +1078,12 @@
            </div>-->
     </div>
 </div>
-
+<div id="modal-iframe"></div>
 <script src="js/less.js"></script>
 <script src="js/jquery-1.11.0.min.js"></script>
+<script src="layer/layer.js"></script>
 <script src="js/aoo.js"></script>
-<script src="js/iziModal.js"></script>
-<script>
-    $(function () {
-        //iframe弹出模块
-        $("#modal-iframe").iziModal({
-            iconClass: 'icon-settings_system_daydream',
-            transitionIn: 'transitionIn',
-            transitionOut: 'transitionOut',
-            headerColor: '#fff',
-            theme: 'light',
-            width: 1920,
-            overlayClose: true,
-            iframe : true,
-            iframeHeight: 400,
-            top:0,
-            bottom:0,
-            history:true,
-            closeButton:true,
-        });
 
-        $(document).on('click', '.trigger-iframe', function (event) {
-            // event.preventDefault();
-            event.preventDefault();
-            $("#modal-iframe").iziModal('open',event);
-        });
-    })
-</script>
 
 </body>
 </html>
