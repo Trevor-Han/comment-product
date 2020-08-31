@@ -1,5 +1,5 @@
 $(function () {
-    //banner
+    //banner index.html
     let bannerIn = new Swiper(".banner .swiper-container",{
         autoplay:false,
         loop:true,
@@ -16,7 +16,7 @@ $(function () {
             prevEl: '.swiper-button-prev',
         },
     });
-    //合作企业
+    //合作企业  index.html
     let cooperate = new Swiper(".cooperate-con .swiper-container",{
         autoplay:{
             disableOnInteraction: false,
@@ -27,7 +27,7 @@ $(function () {
         slidesPerView : 6,
 
     });
-    //企业新闻
+    //企业新闻 news.html
     let newsRotation =  new Swiper(".news-rotation .swiper-container", {
         autoplay:false,
         loop:false,
@@ -38,7 +38,7 @@ $(function () {
             prevEl: '.swiper-button-prev',
         },
     });
-    //专题新闻
+    //专题新闻 news.html
     let thematicList= new Swiper(".thematic-list .swiper-container", {
         autoplay:false,
         loop:false,
@@ -55,7 +55,7 @@ $(function () {
             prevEl: '.swiper-button-prev',
         },
     });
-    //产品详情
+    //产品详情 待定
     let galleryThumbs = new Swiper("#gallery-thumbs", {
         slidesPerView: 4,
         spaceBetween: 10,
@@ -82,7 +82,7 @@ $(function () {
             swiper: galleryThumbs
         },
     });
-    // 产品推荐
+    // 产品推荐 待定
     let productRecommendation = new Swiper(".recommendation-list .swiper-container",{
         autoplay:true,
         loop:true,
@@ -95,7 +95,7 @@ $(function () {
         observer:true,
         observeParents:true,
     });
-    //灯具使用
+    //灯具使用 articles.html
     let dengRec = new Swiper(".deng-rec .swiper-container",{
         autoplay:false,
         loop:true,
@@ -110,7 +110,7 @@ $(function () {
         observer:true,
         observeParents:true,
     });
-    //合作企业
+    //合作企业 industry-news-list.html
     let cooperate1 = new Swiper(".cooperate-con1 .swiper-container",{
         autoplay:{
             delay:2000,
@@ -120,5 +120,18 @@ $(function () {
         spaceBetween: 10,
         speed: 1000,
         slidesPerView : 2,
+    });
+    //时间年鉴 about.html
+    let ourswiper = new Swiper("#product-container", {
+        autoplay:false,
+        loop:false,
+        slidesPerView: 4,
+        initialSlide: 1,
+        spaceBetween: 0,
+        speed: 1000,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
     });
 });

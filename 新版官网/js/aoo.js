@@ -7,6 +7,28 @@ $(function () {
     recommendClick();
     waterfall(".excerpts-box",".excerpts-item");
 
+    //iframe弹窗层
+    let top = 0;
+    let $nav = $("body");
+    $('.trigger').click(function (e) {
+        e.preventDefault();
+        layer.open({
+            type: 2,
+            title: 'aoo-led',
+            shadeClose: true,
+            shade:0.7,
+            area: ['1280px', '100%'],
+            content: $(this).attr('href'),
+            skin: 'demo-class'
+        });
+        getPopup();
+    });
+    $(document).on('click', '.layui-layer-setwin', function (event) {
+        getPopDown();
+    });
+    $(document).on('click', '.layui-layer-shade', function (event) {
+        getPopDown();
+    });
 
     //导航栏列表hover效果
     function mainNavHover() {
@@ -44,7 +66,7 @@ $(function () {
         let navSmall = $(".mainNav .small");
         $(window).scroll(function () {
             let offsetY = $("body").scrollTop() + $("html").scrollTop();
-            // $(".dropdown").css("display","none");
+            console.log(offsetY);
             if (offsetY >= headHeight) {
                 oMainNav.css({
                     position: "fixed",
@@ -74,7 +96,6 @@ $(function () {
             }
         });
     }
-
     //产品列表hover效果
     function productHover() {
         let $nth = $(".product-details-list>ul>li:nth-of-type(4n)");
@@ -154,8 +175,9 @@ $(function () {
         });
     }
 
+
     //iframe弹窗层
-    let mask = 0;
+    /*let mask = 0;
     let $lead = $("<div class=\"modal-title\">\n" +
         "    <div class=\"h1-mask\">\n" +
         "        <h1>点击空白<br>区域返回</h1>\n" +
@@ -169,7 +191,7 @@ $(function () {
             title: 'aoo-led',
             shadeClose: true,
             shade: 0.7,
-            area: ['1280px', '100%'],
+            area: ['1200px', '100%'],
             content: $(this).attr('href'),
             skin: 'demo-class'
         });
@@ -184,5 +206,33 @@ $(function () {
             $lead.remove();
         }
     });
+     $(document).on('click', '.layui-layer-setwin', function (event) {
+        $("body").css({
+            overflowY:"auto"
+        })
+    });
+    $(document).on('click', '.layui-layer-shade', function (event) {
+        $("body").css({
+            overflowY:"auto"
+        })
+    });
+    */
 
+    function getPopup(){
+        top = window.pageYOffset;
+        $nav.css({
+            position:"fixed",
+            width:"100%",
+            top:-top,
+            overflow: "hidden"
+        });
+        return top;
+    }
+    function getPopDown(){
+        $nav.attr('style',"");
+        $nav.css("position","relative");
+        window.scrollTo(0, top);
+        top = 0;
+        return false;
+    }
 });
