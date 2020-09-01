@@ -5,7 +5,6 @@ $(function () {
     headerScroll();
     fontClick();
     recommendClick();
-    waterfall(".excerpts-box",".excerpts-item");
 
     //iframe弹窗层
     let top = 0;
@@ -16,7 +15,7 @@ $(function () {
             type: 2,
             title: 'aoo-led',
             shadeClose: true,
-            shade:0.7,
+            shade: 0.7,
             area: ['1280px', '100%'],
             content: $(this).attr('href'),
             skin: 'demo-class'
@@ -29,6 +28,89 @@ $(function () {
     $(document).on('click', '.layui-layer-shade', function (event) {
         getPopDown();
     });
+    //记录window滚动高度
+    function getPopup() {
+        top = window.pageYOffset;
+        $nav.css({
+            position: "fixed",
+            width: "100%",
+            top: -top,
+            overflow: "hidden"
+        });
+        return top;
+    }
+    function getPopDown() {
+        $nav.attr('style', "");
+        $nav.css("position", "relative");
+        window.scrollTo(0, top);
+        top = 0;
+        return false;
+    }
+
+
+    //锚点跳转
+    $(".dropdown .about-us>ul>li>a").click(function () {
+        let params = $(this).attr("href");
+        let i = params.indexOf("#");
+        let str = params.substr(i,params.length);
+        let mao = $(str);
+        let pos = mao.offset().top;
+        let poshigh = mao.height();
+        $("html,body").animate({
+            scrollTop: pos - poshigh -30
+        }, 500);
+        return false;
+    });
+
+    //获取当前时间
+    let oYear = $(".now-time .time-year>span");
+    let oMouth = $(".now-time .time-mouth");
+    let oDay = $(".now-time .time-day");
+    setTime();
+    setInterval(function () {
+        setTime();
+    }, 1000);
+    function setTime() {
+        let obj = getNowDate();
+        oYear.html(obj.year);
+        oMouth.html(obj.month+"/"+obj.day);
+        oDay.html(obj.hour+":"+obj.minutes+":"+obj.seconds+" "+obj.week);
+    }
+    function getNowDate() {
+        let date = new Date();
+        let year = date.getFullYear() // 年
+        let month = date.getMonth() + 1; // 月
+        let day  = date.getDate(); // 日
+        let hour = date.getHours(); // 时
+        let minutes = date.getMinutes(); // 分
+        let seconds =  date.getSeconds();
+        let weekArr = ['星期日','星期一', '星期二', '星期三', '星期四', '星期五', '星期六' ];
+        let week = weekArr[date.getDay()];
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (day >= 0 && day <= 9) {
+            day = "0" + day;
+        }
+        if (hour >= 0 && hour <= 9) {
+            hour = "0" + hour;
+        }
+        if (minutes >= 0 && minutes <= 9) {
+            minutes = "0" + minutes;
+        }
+        if (seconds >= 0 && seconds <= 9) {
+            seconds = "0" + seconds;
+        }
+        return {
+            year:year,
+            month:month,
+            day:day,
+            hour:hour,
+            minutes:minutes,
+            seconds:seconds,
+            week:week
+        }
+    }
 
     //导航栏列表hover效果
     function mainNavHover() {
@@ -66,7 +148,6 @@ $(function () {
         let navSmall = $(".mainNav .small");
         $(window).scroll(function () {
             let offsetY = $("body").scrollTop() + $("html").scrollTop();
-            console.log(offsetY);
             if (offsetY >= headHeight) {
                 oMainNav.css({
                     position: "fixed",
@@ -96,28 +177,29 @@ $(function () {
             }
         });
     }
+
     //产品列表hover效果
     function productHover() {
         let $nth = $(".product-details-list>ul>li:nth-of-type(4n)");
         $nth.hover(function () {
             $(this).css({
-                position:"absolute",
+                position: "absolute",
                 zIndex: 499,
-                right:"15px"
+                right: "15px"
             })
         }, function () {
             setTimeout(function () {
                 $nth.css({
-                    position:"relative",
+                    position: "relative",
                     zIndex: 299,
-                    right:0
+                    right: 0
                 });
-            },500);
+            }, 500);
         });
     }
 
     //字体调整
-    function fontClick(){
+    function fontClick() {
         $(".font_down").click(function () {
             $(".article-content-word p").css({
                 fontSize: "14px",
@@ -138,7 +220,7 @@ $(function () {
         });
     }
 
-   //其他产品列表点击
+    //其他产品列表点击
     function recommendClick() {
         $(".recommend-left-other>ul>li").click(function () {
             let recommendIndex = $(this).index();
@@ -147,8 +229,8 @@ $(function () {
         });
     }
 
-   //案例节选瀑布流
-    function waterfall(ibox,item) {
+    //案例节选瀑布流
+    function waterfall(ibox, item) {
         let pos = [],
             $items = $(item),
             fontSize = getComputedStyle(window.document.documentElement)['font-size'].split('px')[0],
@@ -171,68 +253,10 @@ $(function () {
             }
             this.style.cssText = 'left:' + (pos[_temp][0] + .20) + 'rem; top:' + pos[_temp][1] + 'rem;';
             pos[_temp][1] = pos[_temp][1] + _height;
-            $(ibox).css("height",(pos[_temp][1]+3)+"rem");
+            $(ibox).css("height", (pos[_temp][1] + 3) + "rem");
         });
     }
+    waterfall(".excerpts-box", ".excerpts-item");
 
 
-    //iframe弹窗层
-    /*let mask = 0;
-    let $lead = $("<div class=\"modal-title\">\n" +
-        "    <div class=\"h1-mask\">\n" +
-        "        <h1>点击空白<br>区域返回</h1>\n" +
-        "    </div>\n" +
-        "</div>");
-    $('.trigger').click(function (e) {
-        e.preventDefault();
-        $("body").append($lead);
-        layer.open({
-            type: 2,
-            title: 'aoo-led',
-            shadeClose: true,
-            shade: 0.7,
-            area: ['1200px', '100%'],
-            content: $(this).attr('href'),
-            skin: 'demo-class'
-        });
-        $(".layui-layer-shade").click(function () {
-            $lead.remove();
-        });
-        $(".layui-layer-ico").click(function () {
-            $lead.remove();
-        });
-        mask++;
-        if (mask>1){
-            $lead.remove();
-        }
-    });
-     $(document).on('click', '.layui-layer-setwin', function (event) {
-        $("body").css({
-            overflowY:"auto"
-        })
-    });
-    $(document).on('click', '.layui-layer-shade', function (event) {
-        $("body").css({
-            overflowY:"auto"
-        })
-    });
-    */
-
-    function getPopup(){
-        top = window.pageYOffset;
-        $nav.css({
-            position:"fixed",
-            width:"100%",
-            top:-top,
-            overflow: "hidden"
-        });
-        return top;
-    }
-    function getPopDown(){
-        $nav.attr('style',"");
-        $nav.css("position","relative");
-        window.scrollTo(0, top);
-        top = 0;
-        return false;
-    }
 });
