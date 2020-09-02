@@ -396,3 +396,29 @@ input[type='search'] {
     }
 
 }*/
+@media screen and (max-width:1100px){
+    .all-in{
+        width: 100%;
+    }
+    .details-con-right{
+        width: 65.82%!important;
+        float: left;
+    }
+    .details-con-left {
+        width: 34.17%!important;
+        float: right;
+    }
+}
+@media screen and (max-width:1024px){
+    .all-in{
+        width: 100%;
+    }
+    .details-con-right{
+        width: 50%!important;
+        margin: 0 auto;
+    }
+    .details-con-left {
+        display: none;
+    }
+}
+

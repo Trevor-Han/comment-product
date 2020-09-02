@@ -54,10 +54,13 @@ $(function () {
         let i = params.indexOf("#");
         let str = params.substr(i,params.length);
         let mao = $(str);
+        console.log(mao);
         let pos = mao.offset().top;
+        console.log(pos);
         let poshigh = mao.height();
+        console.log(poshigh);
         $("html,body").animate({
-            scrollTop: pos - poshigh -30
+            scrollTop: pos - poshigh/2
         }, 500);
         return false;
     });
