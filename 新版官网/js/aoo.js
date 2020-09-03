@@ -10,6 +10,7 @@ $(function () {
     let top = 0;
     let $nav = $("body");
     let windowWidth = $(window).width();
+    console.log(windowWidth);
     $('.trigger').click(function (e) {
         e.preventDefault();
         getPopup();
@@ -254,11 +255,11 @@ $(function () {
             _box_width = $(ibox).width() / fontSize,
             _owidth = $items.eq(0).width() / fontSize + .2,
             _num = Math.floor(_box_width / _owidth);
-        console.log(fontSize);
-        console.log($(ibox).width());
-        console.log(_box_width);
-        console.log(_owidth);
-        console.log(_num);
+        console.log(fontSize);//16
+        console.log($(ibox).width());//1100
+        console.log(_box_width);//68.75
+        console.log(_owidth);//16.7
+        console.log(_num);//4
         let i = 0;
         for (; i < _num; i++) {
             pos.push([i * _owidth, 0]);
