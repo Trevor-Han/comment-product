@@ -53,6 +53,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
   display: none;
 }
 .mainNav{
+  display: block;
   width: 100%;
   height: 122px;
   position: relative;
@@ -1252,6 +1253,10 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
               }
               &:hover{
                 background: none;
+                h1{
+                  opacity: 0;
+                  top: 35%;
+                }
               }
             }
           }
@@ -1260,7 +1265,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
     }
   }
 }
-/*************应用领域**************/
+/*************合作品牌**************/
 .brand{
   width: 100%;
   padding: 32px 0;
@@ -1485,7 +1490,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
         width: 100%;
         height: 100%;
         li{
-          width: 30%;
+          width: 32%;
           float: left;
           margin-right: 2%;
           margin-bottom: 22px;
@@ -1534,6 +1539,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
               -webkit-box-orient: vertical;
               -webkit-line-clamp: 3;
               overflow: hidden;
+              text-align: justify;
             }
           }
         }
@@ -1551,7 +1557,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
         background: none;
         transition: all 0.5s ease-in-out;
         position: absolute;
-        left: 47%;
+        left: 50%;
         -webkit-transform: translate(-50%,0%);
         -moz-transform: translate(-50%,0%);
         -ms-transform: translate(-50%,0%);
@@ -1983,6 +1989,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
               -webkit-line-clamp: 3;
               overflow: hidden;
               color: #999;
+              text-align: justify;
             }
           }
           .aoonews-next{
@@ -2969,6 +2976,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
         }
         ul{
           padding: 0 0 36px 14px;
+          overflow: hidden;
           li{
             float: left;
             padding: 14px 20px;
@@ -3774,6 +3782,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
     overflow: hidden;
     .details-con{
       width: 100%;
+      overflow: hidden;
       .details-con-left{
         width:350px;
         padding: 24px;
@@ -4158,30 +4167,117 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
     }
   }
 }
-/****************用户引导***********************/
- /* .h1-mask{
-    position: fixed;
-    z-index: 99999999;
-    left: 10%;
-    top: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    width: 24vh;
-    height: 24vh;
-    background: #fff;
-    opacity: 0.7;
-    border: 1px dashed #999;
-    h1{
-      font-size: 5vh;
-      color: #303233;
-      text-align: center;
-      margin-top: 5vh;
+
+/****************应用application***********************/
+.application{
+  width: 100%;
+  .application-in{
+    margin: 0 auto;
+    overflow: hidden;
+    ul{
+      width: 100%;
+      overflow: hidden;
+      margin: 24px 0;
+      li{
+        width: 355px;
+        height: 266.55px;
+        background: #000;
+        margin-right: 16px;
+        margin-bottom: 16px;
+        float: left;
+        &:nth-of-type(3n){
+          margin-right: 0;
+        }
+        a{
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          img{
+            width: 100%;
+          }
+          .application-mask{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.5s ease-in-out;
+            h1{
+              width: 100%;
+              text-align: center;
+              position: absolute;
+              top: 93%;
+              left: 50%;
+              line-height: 40px;
+              background: rgba(0,0,0,0.5);
+              -webkit-transform: translate(-50%,-50%);
+              -moz-transform: translate(-50%,-50%);
+              -ms-transform: translate(-50%,-50%);
+              -o-transform: translate(-50%,-50%);
+              transform: translate(-50%,-50%);
+              font-size: 20px;
+              color: #fff;
+              text-shadow: 1px 1px 0 #000;
+              transition: all 0.5s ease-in-out 0.2s;
+            }
+            p{
+              width: 90%;
+              color: #fff;
+              font-size: 16px;
+              line-height: 26px;
+              text-align: center;
+              opacity: 0;
+              position: absolute;
+              top: 70%;
+              left: 50%;
+              -webkit-transform: translate(-50%,-50%);
+              -moz-transform: translate(-50%,-50%);
+              -ms-transform: translate(-50%,-50%);
+              -o-transform: translate(-50%,-50%);
+              transform: translate(-50%,-50%);
+              transition: all 0.5s ease-in-out 0.1s;
+            }
+            button{
+              width: 140px;
+              line-height: 40px;
+              text-align: center;
+              background: #fff;
+              color: #00bebe;
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              opacity: 0;
+              -webkit-transform: translate(-50%,-50%);
+              -moz-transform: translate(-50%,-50%);
+              -ms-transform: translate(-50%,-50%);
+              -o-transform: translate(-50%,-50%);
+              transform: translate(-50%,-50%);
+              -webkit-border-radius: 50px;
+              -moz-border-radius: 50px;
+              border-radius: 50px;
+              transition: all 0.5s ease-in-out ;
+            }
+            &:hover{
+              background: rgba(0,190,190,0.95);
+              h1{
+                text-shadow: none;
+                top: 30%;
+                background: rgba(0,0,0,0);
+              }
+              p{
+                top: 55%;
+                opacity: 1;
+              }
+              button{
+                top: 80%;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
     }
   }
-  .p-mask{
-    left: 90%;
-  }*/
-
+}

@@ -9,18 +9,32 @@ $(function () {
     //iframe弹窗层
     let top = 0;
     let $nav = $("body");
+    let windowWidth = $(window).width();
     $('.trigger').click(function (e) {
         e.preventDefault();
-        layer.open({
-            type: 2,
-            title: 'aoo-led',
-            shadeClose: true,
-            shade: 0.7,
-            area: ['1280px', '100%'],
-            content: $(this).attr('href'),
-            skin: 'demo-class'
-        });
         getPopup();
+        if (windowWidth <=1024) {
+            layer.open({
+                type: 2,
+                title: 'aoo-led',
+                shadeClose: true,
+                shade: 0.7,
+                area: ['100%', '100%'],
+                content: $(this).attr('href'),
+                skin: 'demo-class'
+            });
+        }
+        else {
+            layer.open({
+                type: 2,
+                title: 'aoo-led',
+                shadeClose: true,
+                shade: 0.7,
+                area: ['90%', '100%'],
+                content: $(this).attr('href'),
+                skin: 'demo-class'
+            });
+        }
     });
     $(document).on('click', '.layui-layer-setwin', function (event) {
         getPopDown();
@@ -240,6 +254,11 @@ $(function () {
             _box_width = $(ibox).width() / fontSize,
             _owidth = $items.eq(0).width() / fontSize + .2,
             _num = Math.floor(_box_width / _owidth);
+        console.log(fontSize);
+        console.log($(ibox).width());
+        console.log(_box_width);
+        console.log(_owidth);
+        console.log(_num);
         let i = 0;
         for (; i < _num; i++) {
             pos.push([i * _owidth, 0]);
@@ -260,6 +279,7 @@ $(function () {
         });
     }
     waterfall(".excerpts-box", ".excerpts-item");
+
 
 
 });
