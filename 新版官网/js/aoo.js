@@ -9,12 +9,12 @@ $(function () {
     //iframe弹窗层
     let top = 0;
     let $nav = $("body");
-    let windowWidth = $(window).width();
-    console.log(windowWidth);
     $('.trigger').click(function (e) {
+        let windowWidth = $(window).width();
         e.preventDefault();
         getPopup();
         if (windowWidth <=1024) {
+            console.log(1024);
             layer.open({
                 type: 2,
                 title: 'aoo-led',
@@ -25,7 +25,8 @@ $(function () {
                 skin: 'demo-class'
             });
         }
-        else {
+        else if(windowWidth > 1024){
+            console.log(1920);
             layer.open({
                 type: 2,
                 title: 'aoo-led',
@@ -255,11 +256,6 @@ $(function () {
             _box_width = $(ibox).width() / fontSize,
             _owidth = $items.eq(0).width() / fontSize + .2,
             _num = Math.floor(_box_width / _owidth);
-        console.log(fontSize);//16
-        console.log($(ibox).width());//1100
-        console.log(_box_width);//68.75
-        console.log(_owidth);//16.7
-        console.log(_num);//4
         let i = 0;
         for (; i < _num; i++) {
             pos.push([i * _owidth, 0]);
