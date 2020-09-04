@@ -80,6 +80,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
         height: 58px;
         margin-top: 32px;
         min-width: 416px;
+        z-index: 9;
         .logo-left{
           height: 100%;
           float: left;
@@ -194,6 +195,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
         height: 47px;
         margin-top: 20px;
         min-width: 317px;
+        z-index: 9;
         .logo-left{
           height: 100%;
           float: left;
@@ -867,7 +869,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
     width: 1100px;
     margin: auto;
     padding: 30px 0;
-    overflow: auto;
+    overflow: hidden;
     dl {
       font-size: 14px;
       padding-top: 0;
@@ -934,6 +936,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
           width: 100%;
           svg{
             width: 100%;
+            height: 42.88px;
             .logo-color{
               fill: #949498;
             }
@@ -1753,6 +1756,11 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
               border-radius: 3px;
             }
             h6{
+              font-size: 16px;
+              display:inline-block;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              overflow: hidden;
               &:hover{
                 color: #00bebe;
               }
@@ -3441,7 +3449,6 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
     overflow: hidden;
     .product-details-list{
       width: 100%;
-      height: 270px;
       margin-bottom: 32px;
       overflow: hidden;
       ul{
@@ -3450,129 +3457,82 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
         position: relative;
         li{
           float: left;
-          width: 24%;
-          height: 100%;
-          margin-right: 14px;
+          width: 32.727272%;
+          height: 500px;
+          margin-right: 10px;
           background: #fff;
           position: relative;
           transition: all 0.5s;
           z-index: 399;
-          -webkit-border-radius: 5px;
-          -moz-border-radius: 5px;
-          border-radius: 5px;
-          box-shadow: 0 2px 6px rgba(236,236,236,1);
-         /* .cai-dai{
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 599;
-            opacity: 0;
-            transition: all 0.5s;
-          }*/
-          .cai-dai{
-            width: 6px;
-            height: 100%;
-            position: absolute;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
-            left: 0;
-            top: 0;
-            z-index: 599;
-            opacity: 0;
-            transition: all 0.5s;
-            background-position: 0 0;
-            background-repeat: repeat;
-            background-image: -webkit-repeating-linear-gradient(to bottom, #68103b, #68103b 50px, #703f28 50px, #703f28 100px, #a16b13 100px, #a16b13 150px, #a5a02c 150px, #a5a02c 200px, #5e812d 200px, #5e812d 250px, #1c6075 250px, #1c6075 300px, #403161 300px, #403161 350px);
-            background-image: -moz-repeating-linear-gradient(to bottom, #68103b, #68103b 50px, #703f28 50px, #703f28 100px, #a16b13 100px, #a16b13 150px, #a5a02c 150px, #a5a02c 200px, #5e812d 200px, #5e812d 250px, #1c6075 250px, #1c6075 300px, #403161 300px, #403161 350px);
-            background-image: repeating-linear-gradient(to bottom,#68103b, #68103b 50px, #703f28 50px, #703f28 100px, #a16b13 100px, #a16b13 150px, #a5a02c 150px, #a5a02c 200px, #5e812d 200px, #5e812d 250px, #1c6075 250px, #1c6075 300px, #403161 300px, #403161 350px);
-           }
-          &:last-of-type{
+          margin-bottom: 10px;
+          &:nth-of-type(3n){
             margin-right: 0;
           }
-          a{
-            display: block;
+           a{
+            display: inline-block;
             width: 100%;
             height: 100%;
-            color: #303233;
-            font-size: 20px;
-            position: relative;
-            z-index: 9999;
-            .pro-img{
-              position: absolute;
-              left: 10px;
-              top: 25px;
-              z-index: 199;
-              width: 215px;
-              transition: all 0.5s;
-            }
-            .m-p{
-              position: absolute;
+            padding: 27px;
+             transition: all 0.2s;
+             &:hover{
+               -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.16);
+               -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.16);
+               box-shadow: 0 5px 10px rgba(0,0,0,.16);
+             }
+            .the-details-top{
               width: 100%;
-              bottom: 30px;
-              text-align: center;
-              font-size: 16px;
-              color: #303233;
-            }
-            .product-hover{
-              position: absolute;
-              width: 277px;
-              height: 100%;
-              right: 0;
-              top: 0;
-              text-align: left;
-              display: none;
-              z-index: 9;
-              h1{
-                font-size: 20px;
-                margin-top: 20px;
-                font-weight: 500;
-              }
-              .product-feature{
-                width: 100%;
-                margin-top: 30px;
-                margin-bottom: 16px;
-                overflow: hidden;
-                ul{
-                  width: 100%;
-                  height: 100%;
-                  display: block;
-                  li{
-                    background: #fff url("../images/icon/circle.png") no-repeat 0px 10px;
-                    padding-left:14px;
-                    width: 100%;
-                    font-size: 15px;
-                    line-height: 28px;
-                    text-align: left;
-                    &:first-of-type{
-                      font-weight: 600;
-                    }
-                  }
-                }
+              height: 50%;
+              position: relative;
+              .product-label{
+                width: 70px;
+                height: 32px;
+                background: rgba(0,190,190,0.65);
+                border: 1px solid #00cccc;
+                text-align: center;
+                font-size: 15px;
+                color: #fff;
+                line-height: 32px;
               }
               img{
-                width: 80%;
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 245px;
               }
             }
-          }
-          &:hover{
-            width: 48%;
-            padding-right: 15px;
-            .product-hover{
-              display: block;
+            .the-details-bottom{
+              width: 100%;
+              height: 50%;
+              text-align: center;
               h1{
-                font-size: 18px;
+                margin-top: 32px;
+                font-size: 23px;
                 color: #303233;
+                font-weight: bold;
               }
-            }
-            .cai-dai{
-              opacity:1;
-            }
-            .m-p{
-              display: none;
-            }
-            .pro-img{
-              top: 55px;
+              h6{
+                font-size: 15px;
+                color: #525252;
+                margin-top: 13px;
+                font-weight: 500;
+              }
+              p{
+                display: inline-block;
+                font-size: 15px;
+                margin-top: 50px;
+                color: #00bebe;
+                font-weight: bold;
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+              span{
+                display: inline-block;
+                font-size: 15px;
+                color: #00bebe;
+                margin-left: 5px;
+              }
             }
           }
         }
@@ -3775,7 +3735,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
 /****************产品详情***********************/
 .product-mask{
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  background: #EFF1F4;
   padding-bottom: 32px;
   .product-mask-con{
     margin: 0 auto;

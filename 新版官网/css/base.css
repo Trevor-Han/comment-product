@@ -455,33 +455,22 @@ input[type='search'] {
     }
 
     /****************产品列表 product-details.html****************/
-    .product-details .product-details-con .product-details-list{
-        height: 220px!important;
-        margin-bottom: 14px!important;
-    }
     .product-details .product-details-con .product-details-list ul li{
-        margin-right: 9px!important;
+        width: 300px!important;
+        height: 416.67px!important;
     }
-    .product-details .product-details-con .product-details-list ul li a .pro-img{
-        left: 27px!important;
-        width: 170px!important;
+    .product-details .product-details-con .product-details-list ul li a .the-details-top img{
+        width: 190px!important;
     }
-    .product-details .product-details-con .product-details-list ul li a .product-hover h1{
+    .product-details .product-details-con .product-details-list ul li a .the-details-bottom h1{
         font-size: 18px!important;
-        margin-left: 32px!important;
     }
-    .product-details .product-details-con .product-details-list ul li a .product-hover .product-feature ul li{
-        font-size: 13px!important;
-        margin-left: 28px!important;
+    .product-details .product-details-con .product-details-list ul li a .the-details-bottom h6{
+        font-size: 12px!important;
     }
-    .product-details .product-details-con .product-details-list ul li a .product-hover img{
-        display: none!important;
+    .product-details .product-details-con .product-details-list ul li a .the-details-bottom p{
+        margin-top: 39px!important;
     }
-    .product-details .product-details-con .product-details-list ul li:hover .pro-img{
-        left: 10px!important;
-        top: 45px!important;
-    }
-
     /****************应用领域细分适配 application.html****************/
     .application .application-in ul li{
         width: 296px!important;
@@ -587,6 +576,11 @@ input[type='search'] {
         overflow: hidden;
         text-overflow:ellipsis;
         white-space: nowrap;
+    }
+
+    /****************案例节选适配 case-excerpts.html****************/
+    .case-excerpts .case-excerpts-in .excerpts-box li a{
+        font-size: 12px!important;
     }
 }
 

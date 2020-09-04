@@ -31,7 +31,8 @@ html #layuicss-layer {
     background-color: #fff;
     -webkit-background-clip: content;
     border-radius: 2px;
-    box-shadow: 1px 1px 50px rgba(0,0,0,.3)
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+    overflow: hidden;
 }
 
 .layui-layer-close {
@@ -39,7 +40,8 @@ html #layuicss-layer {
 }
 
 .layui-layer-content {
-    position: relative
+    position: relative;
+    margin-right: -17px;
 }
 
 .layui-layer-border {
