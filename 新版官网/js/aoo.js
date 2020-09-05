@@ -175,7 +175,7 @@ $(function () {
                 navSmall.removeClass("none-p");
                 $(".banner").css("margin-top", "80px");
                 $(".banner-other").css("margin-top", "80px");
-                $(".dropdown").css("margin-top", "40px");
+                $(".dropdown").css("margin-top", "45px");
 
 
             } else {
@@ -194,25 +194,6 @@ $(function () {
         });
     }
 
-  /*  //产品列表hover效果
-    function productHover() {
-        let $nth = $(".product-details-list>ul>li:nth-of-type(4n)");
-        $nth.hover(function () {
-            $(this).css({
-                position: "absolute",
-                zIndex: 499,
-                right: "15px"
-            })
-        }, function () {
-            setTimeout(function () {
-                $nth.css({
-                    position: "relative",
-                    zIndex: 299,
-                    right: 0
-                });
-            }, 500);
-        });
-    }*/
 
     //字体调整
     function fontClick() {
@@ -253,10 +234,6 @@ $(function () {
             _box_width = $(ibox).width() / fontSize,
             _owidth = $items.eq(0).width() / fontSize + .2,
             _num = Math.floor(_box_width / _owidth);
-        console.log(_box_width);
-        console.log(_owidth);
-        console.log(_num);
-        console.log($(ibox).width());
         let i = 0;
         for (; i < _num; i++) {
             pos.push([i * _owidth, 0]);

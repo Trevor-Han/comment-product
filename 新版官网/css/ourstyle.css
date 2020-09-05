@@ -4,7 +4,6 @@
 }
 .product-wrapper {
     max-width: 1100px;
-    background: #2a2a2a;
     padding: 20px 10px;
     margin: 16px auto;
     position: relative
@@ -26,10 +25,9 @@
     content: "";
     width: 100%;
     height: 3px;
-    background: url("../images/our/productBase-features-model.png") no-repeat center;
-    background-size: 100% auto;
+    border-top: 1px dashed rgba(0,197,197,0.3);
     position: absolute;
-    top: 50px;
+    top: 47px;
     left: 0;
     z-index: 0
 }
@@ -38,39 +36,51 @@
     position: relative;
     float: left;
     cursor: pointer;
-}
-
-.features-slide .features-item>* {
-    text-align: center
+    min-height: 226px;
 }
 
 .features-item h3 {
     font-size: 16px;
     line-height: 28px;
     margin-bottom: 50px;
-    color: #ffffff;
-    opacity: 0.7;
-    transition: all 0.1s
+    color: #525252;
+    margin-left: 18px;
+    -webkit-transition: all 0.2s linear 0.1s;
+    -moz-transition: all 0.2s linear 0.1s;
+    -ms-transition: all 0.2s linear 0.1s;
+    -o-transition: all 0.2s linear 0.1s;
+    transition: all 0.2s linear 0.1s;
+    text-align: center;
 }
 
 .features-item i {
     position: absolute;
     width: 75%;
-    height: 33px;
-    background: url("../images/our/productBase-features-timeline.png") no-repeat right center;
+    height: 25px;
+    background: url("../images/our/productBase-features-timeline.svg") no-repeat right center;
+    opacity: 0.7;
     background-size: contain;
-    left: -25%;
-    margin-left: 10px;
+    left: -21%;
+    margin-left: 12px;
     top: 35px;
-    z-index: 3
+    z-index: 3;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 .features-item .features-info {
     display: block;
     margin: 0 auto;
-    padding: 20px 53px;
+    padding: 38px 24px;
     transition: all 0.3s;
-    border-radius: 2px
+    border-radius: 2px;
+    position: absolute;
+    top: 62%;
+    left: 7%;
+    transform: translate(0,-50%);
 }
 
 .features-item .features-info .features-info-i {
@@ -81,32 +91,49 @@
 }
 
 .features-item .features-info .features-info-s {
-    font-size: 15px;
-    color: #FFFFFF;
+    font-size: 14px;
+    color: #525252;
     line-height: 24px;
-    overflow: hidden
+    overflow: hidden;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
 }
 
 .features-item.dark i {
-    background: url("../images/our/productBase-features-timeline-dark.png") no-repeat right center;
+    background: url("../images/our/productBase-features-timeline-dark.svg") no-repeat right center;
     background-size: contain;
 }
-/*鼠标悬浮效果*/
+
+/*slideschange时触发*/
+.the-hover h3{
+    font-size: 22px;
+    line-height: 28px;
+    opacity: 0.9
+}
+.the-hover i{
+    opacity: 1;
+    height: 30px;
+}
+.the-hover a{
+    background: url("../images/our/productBase-features-info.svg") no-repeat center center;
+    background-size: 100% 100%
+}
 .features-item:hover h3 {
     font-size: 22px;
     line-height: 28px;
     opacity: 0.9
 }
-
+/*鼠标悬浮效果*/
 .features-item:hover i {
-    width: 75%;
-    margin-left: 13px;
-    background: url("../images/our/productBase-features-timeline-hover.png") no-repeat right center;
-    background-size: contain;
+    opacity: 1;
+    height: 30px;
 }
 
 .features-item:hover a {
-    background: url("../images/our/productBase-features-info.png") no-repeat;
+    background: url("../images/our/productBase-features-info.svg") no-repeat;
     background-size: 100% 100%
 }
 /*左右按钮*/
@@ -123,7 +150,7 @@
     position: absolute;
     width: 15px;
     height: 30px;
-    background: url("../images/our/productBase-features-left.png") no-repeat;
+    background: url("../images/our/productBase-features-left.svg") no-repeat;
     background-size: 100% 100%;
     top: 50%;
     margin-top: -15px;
@@ -144,7 +171,7 @@
     position: absolute;
     width: 15px;
     height: 30px;
-    background: url("../images/our/productBase-features-right.png") no-repeat;
+    background: url("../images/our/productBase-features-right.svg") no-repeat;
     background-size: 100% 100%;
     top: 50%;
     margin-top: -15px;

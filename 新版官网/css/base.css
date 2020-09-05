@@ -179,8 +179,6 @@ label {
 }
 
 input[type=submit] {
-    -webkit-user-modify: read-plaintext-only;
-    -moz-user-modify: read-plaintext-only;
     -ms-user-modify: read-plaintext-only;
     -o-user-modify: read-plaintext-only;
     user-modify: read-plaintext-only;
@@ -201,7 +199,6 @@ input[type='search'] {
 
 /*flex box*/
 .flex {
-    display: box;
     /* OLD - Android 4.4- */
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6 */
@@ -290,6 +287,22 @@ input[type='search'] {
 .my-bullet-active2 {
     opacity: 1;
     background: #00bebe;
+}
+
+/*由于iframe，因此单独设置产品详情页响应的宽度*/
+@media screen and (max-width:1041px){
+    /*产品详情页的图片和侧边导航栏缩放*/
+    .product-mask .product-mask-con{
+        width: 100% !important;
+        max-width: 925px!important;
+    }
+    .details-con-right{
+        width: 62%!important;
+        float: left;
+    }
+    .details-con-left {
+        float: right;
+    }
 }
 
 @media screen and (max-width:1024px){
@@ -383,15 +396,6 @@ input[type='search'] {
         min-width: 925px!important;
     }
 
-    /*产品详情页的图片和侧边导航栏缩放*/
-    .details-con-right{
-        width: 62%!important;
-        float: left;
-    }
-    .details-con-left {
-        float: right;
-    }
-
     /***************首页适配*****************/
     /*四大应用*/
     .major{
@@ -457,7 +461,7 @@ input[type='search'] {
     /****************产品列表 product-details.html****************/
     .product-details .product-details-con .product-details-list ul li{
         width: 300px!important;
-        height: 416.67px!important;
+        height: 366.67px!important;
     }
     .product-details .product-details-con .product-details-list ul li a .the-details-top img{
         width: 190px!important;
@@ -469,7 +473,7 @@ input[type='search'] {
         font-size: 12px!important;
     }
     .product-details .product-details-con .product-details-list ul li a .the-details-bottom p{
-        margin-top: 39px!important;
+        margin-top: 15px!important;
     }
     /****************应用领域细分适配 application.html****************/
     .application .application-in ul li{
@@ -537,6 +541,9 @@ input[type='search'] {
     .about-us .about-us-in .about-con .human-resources li img{
         width: 134% !important;
     }
+    .features-item .features-info .features-info-s{
+        line-height: 20px!important;
+    }
 
     /****************新闻中心适配 news.html****************/
     .news .news-con{
@@ -581,6 +588,12 @@ input[type='search'] {
     /****************案例节选适配 case-excerpts.html****************/
     .case-excerpts .case-excerpts-in .excerpts-box li a{
         font-size: 12px!important;
+    }
+
+    /****************合作品牌brand.html****************/
+    .trademark .trademark-in .trademark-box li{
+        width: 225px!important;
+        height: 155px!important;
     }
 }
 
