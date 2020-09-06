@@ -371,14 +371,15 @@ input[type='search'] {
     .mainNav .mainNav-con .mainNav-left a .logo-right .small{
         display: block;
     }
-    .mainNav .mainNav-con .mainNav-left a .logo-right h1 p{
+    .mainNav .mainNav-con .mainNav-left a .logo-right .small p {
         font-size: 16px;
         text-align: right;
         color: #00bebe;
         font-weight: 400;
-        line-height: 22px;
+        line-height: 12px;
+        margin-top: 3px;
     }
-    .mainNav .mainNav-con .mainNav-left a .logo-right h1 span{
+    .mainNav .mainNav-con .mainNav-left a .logo-right .small span{
         color: #00bebe!important;
         font-size: 18px!important;
     }

@@ -130,11 +130,12 @@ $(function () {
 
     //导航栏列表hover效果
     function mainNavHover() {
-        let $mainLi = $(".mainNav-right>ul>li");
-        let $downMenuMove = $(".dropdown");
+        let scrollTop = 0;
+        let $mainLi = $(".mainNav-right>ul>li>a");
+        let $downMenuMove = $(".dropdown-in");
         $mainLi.hover(function () {
-            let mainIndex = $(this).index();
-            let $downMenuCount = $(".dropdown>div").eq(mainIndex);
+            let mainIndex = $(this).parent().index();
+            let $downMenuCount = $(".dropdown-in>div").eq(mainIndex);
             $(".dropdown").css("display", "block");
             $downMenuCount.addClass("dropdown-status").siblings().removeClass("dropdown-status");
         });
@@ -142,7 +143,6 @@ $(function () {
             $(".dropdown-menu").removeClass("dropdown-status");
             $(".dropdown").css("display", "none");
         });
-
     }
 
     //导航栏子菜单产品列表hover效果
