@@ -4,7 +4,6 @@ $(function () {
     headerScroll();
     fontClick();
     recommendClick();
-
     //iframe弹窗层
     let top = 0;
     let $nav = $("body");
@@ -226,7 +225,10 @@ $(function () {
         });
     }
 
-    //案例节选瀑布流
+    /*@waterfall 案例节选瀑布流
+* @param {object} ibox 父类容器对象
+* @param {number} item 每个单独对象
+*/
     function waterfall(ibox, item) {
         let pos = [],
             $items = $(item),
@@ -254,6 +256,19 @@ $(function () {
     }
     waterfall(".excerpts-box", ".excerpts-item");
 
-
-
+    /*@description 文字溢出ie兼容
+* @param {object} elem 标签对象
+* @param {number} num 超过多少字添加省略号
+*/
+    textOver($(".thematic-swiper-img>a>p"), 45);
+    textOver(".news-articles-right .the-top p", 25);
+    textOver(".general-case-right a p", 40);
+    function textOver(elem,num){
+        $(elem).each(function () {
+            if($(this).text().length > num){
+                $(this).text($(this).text().substring(0,num));
+                $(this).html($(this).html()+"...");
+            }
+        })
+    }
 });

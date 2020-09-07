@@ -1,7 +1,9 @@
-
+/*@sideBerFixed 侧边栏固定
+* @param {object} obj 固定对象
+* @param {number} all 所在滚动区域的父类容器
+*/
 sideBerFixed(".articles-list",".news-details-con");
 sideBerFixed(".article-left",".news-details-con");
-//侧边栏固定
 function sideBerFixed(obj,all) {
     let articlesList = $(obj);
     let sideOffset = articlesList.offset().top;
