@@ -172,9 +172,9 @@ $(function () {
                 oMainNav.addClass("small-nav");
                 navBig.addClass("none-p");
                 navSmall.removeClass("none-p");
-                $(".banner").css("margin-top", "80px");
-                $(".banner-other").css("margin-top", "80px");
-                $(".dropdown").css("margin-top", "45px");
+                $(".banner").css("margin-top", "70px");
+                $(".banner-other").css("margin-top", "70px");
+                $(".dropdown").css("margin-top", "17px");
 
 
             } else {
@@ -262,11 +262,11 @@ $(function () {
 */
     textOver($(".thematic-swiper-img>a>p"), 45);
     textOver(".news-articles-right .the-top p", 25);
-    textOver(".general-case-right a p", 40);
+    textOver(".general-case-right a p", 36);
     function textOver(elem,num){
         $(elem).each(function () {
             if($(this).text().length > num){
-                $(this).text($(this).text().substring(0,num));
+                $(this).text($(this).text().replace(/[ ]/g,"").substring(0,num));
                 $(this).html($(this).html()+"...");
             }
         })

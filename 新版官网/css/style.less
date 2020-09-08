@@ -17,6 +17,11 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
         line-height: 35px;
         color: #999;
         font-weight: 400;
+        span{
+          position: relative;
+          font-size: 12px;
+          top: -1px;
+        }
       }
     }
     .header-right{
@@ -31,6 +36,19 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
           line-height: 35px;
           font-size: 12px;
           color: #999;
+          &:first-of-type{
+            position: relative;
+            &:after{
+              position: absolute;
+              content: "";
+              left: -15px;
+              top: 9px;
+              width: 20px;
+              height: 20px;
+              background: url("../images/icon/header-weixin.svg")no-repeat center center;
+              background-size: 100%;
+            }
+          }
           a{
             display: inline-block;
             font-size: 14px;
@@ -42,6 +60,12 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
               font-weight: 600;
               color: #00bebe;
             }
+          }
+          span{
+            position: relative;
+            font-size: 12px;
+            top: -1px;
+
           }
         }
       }
@@ -85,7 +109,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
           height: 100%;
           float: left;
           img{
-            width: 309px;
+            width: 308px;
             margin-top: -6px;
           }
           p{
@@ -103,9 +127,9 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
             position: absolute;
             content: "";
             width: 2px;
-            height: 95%;
+            height: 90%;
             background: #999;
-            top: 0;
+            top: 2px;
             left: 0;
           }
           h1{
@@ -113,12 +137,12 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
             color: #888;
             font-weight: 600;
             line-height: 20px;
+            margin-top: 1px;
             span{
               display: block;
               font-size: 12px;
               color: #999;font-weight: 400;
               letter-spacing: 0;
-              margin-top: 2px;
             }
           }
         }
@@ -130,16 +154,27 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
       .main-phone{
         position: absolute;
         width: 100%;
-        margin-top: 32px;
+        margin-top: 33px;
         p{
-          font-size: 16px;
+          display: block;
+          font-size: 18px;
           color: #00bebe;
           text-align: right;
+          position: relative;
+          &:after{
+            position: absolute;
+            content: "";
+            left: 76.6%;
+            top: 3px;
+            width: 20px;
+            height: 20px;
+            background: url("../images/icon/phone.svg")no-repeat center center / cover;
+          }
         }
       }
       ul{
         position: absolute;
-        right: 0;
+        right: 14px;
         display: block;
         height: 122px;
         li{
@@ -165,8 +200,11 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
           }
           i{
             position: absolute;
-            top: -5px;
-            right: -30px;
+            top: -2px;
+            right: -14px;
+            img{
+              width: 12px;
+            }
           }
           a{
             font-size: 16px;
@@ -183,7 +221,7 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
 }
 //微型导航
 .small-nav{
-  height: 80px;
+  height: 52px;
   .mainNav-con{
     margin: 0 auto;
     .mainNav-left{
@@ -193,19 +231,19 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
         position: absolute;
         left: 0;
         height: 47px;
-        margin-top: 20px;
+        margin-top: 6px;
         min-width: 317px;
         z-index: 9;
         .logo-left{
           height: 100%;
           float: left;
           img{
-            width: 205.78px;
-            margin-top: -5px;
+            width: 190px;
+            margin-top: -4px;
           }
           p{
-            margin-top: -6px;
-            font-size: 13px;
+            margin-top: -4px;
+            font-size: 12px;
             color: #00bebe;
             font-weight: 400;
           }
@@ -219,9 +257,9 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
             position: absolute;
             content: "";
             width: 2px;
-            height: 94%;
+            height: 87%;
             background: #00bebe;
-            top: 0;
+            top: 1px;
             left: 0;
           }
           .small{
@@ -230,14 +268,24 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
             p{
               display: block;
               text-align: right;
-              font-size: 16px;
+              font-size: 16.72px;
               color: #00bebe;
               font-weight: 400;
-              line-height: 12px;
+              line-height: 10px;
+              margin-top: 2px;
+              &:after{
+                position: absolute;
+                content: "";
+                left: -1px;
+                top: -1px;
+                width: 15px;
+                height: 15px;
+                background: url("../images/icon/phone.svg")no-repeat center center / cover;
+              }
             }
             span{
               display:block;
-              font-size: 18px;
+              font-size: 17.88px;
               color: #00bebe;
               margin-top: 10px;
               line-height: 16px;
@@ -262,15 +310,15 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
       }
       ul{
         position: absolute;
-        right: 0;
+        right: 14px;
         display: block;
-        height: 80px;
+        height: 52px;
         li{
           display:inline-block;
           vertical-align: middle;
           text-align:justify;
           margin-left:15px;
-          line-height: 80px;
+          line-height: 50px;
           position: relative;
           &:after{
             content: "";
@@ -286,11 +334,14 @@ body .demo-class .layui-layer-title{background:#fff; color:#fff; border: none;}
           &:hover::after{
             transform: scaleX(1);
           }
-          i{
+         /* i{
             position: absolute;
-            top: -5px;
-            right: -30px;
-          }
+            top: -2px;
+            right: -13px;
+            img{
+              width: 12px;
+            }
+          }*/
           a{
             font-size: 16px;
             color: #303233;
