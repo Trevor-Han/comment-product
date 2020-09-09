@@ -379,7 +379,7 @@ html #layuicss-layer {
     height: 40px;
     border-radius: 50px;
     background: #00bebe;
-
+    display: none;
 }
 
 .layui-layer-setwin a {

@@ -4,6 +4,7 @@
 */
 sideBerFixed(".articles-list",".news-details-con");
 sideBerFixed(".article-left",".news-details-con");
+
 function sideBerFixed(obj,all) {
     let articlesList = $(obj);
     let sideOffset = articlesList.offset().top;
@@ -15,7 +16,7 @@ function sideBerFixed(obj,all) {
         let h = scroll - fixedHeight- (sideOffset-122) ;
         if (scroll > sideOffset-122 && h < 0){
             articlesList.css({
-                top:90,
+                top:60,
                 position:"fixed",
             });
         }

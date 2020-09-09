@@ -8,11 +8,13 @@
     <meta name="description" content="胜世华通照明是专业研发、生产、批发销售led工矿灯,led工厂灯,led厂房灯等工业照明灯具生产厂家。专注打造性价比产品，承接OEM、ODM代工业务。">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet/less" href="css/style.less">
+    <link rel="stylesheet" href="css/aoo-led.css">
+    <!--<link rel="stylesheet/less" href="css/style.less">-->
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
+
     <![endif]-->
 </head>
 <body>
@@ -30,7 +32,7 @@
                    <li class="the-parameter">
                        <p>产品基础参数：</p>
                        <span>产品功率:100W | 150W | 200W | 250W</span>
-                       <span>工作电压：85V~256V/50Hz(全球通用)</span>
+                       <span>工作电压:85V~256V/50Hz(全球通用)</span>
                        <span>安装方式:吊链安装/吊杆安装</span>
                        <span>配光角度:根据装灯高度选配</span>
                    </li>
@@ -65,7 +67,7 @@
                            <ul>
                                <li>
                                    <div class="code">
-                                       <img src="images/logo/code.png" alt="">
+                                       <img src="images/logo/code.jpg" alt="">
                                        <h4>微信联系我们</h4>
                                    </div>
                                </li>
@@ -81,6 +83,7 @@
             </div>
             <div class="details-con-right fr">
                 <img src="images/product/xingmaithumbnail.png" alt="星脉动力二代">
+                <img src="images/product/xingmaithumbnail.png" alt="星脉动力二代">
             </div>
         </div>
     </div>
@@ -89,5 +92,39 @@
 <script src="js/less.js"></script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/aoo.js"></script>
+<script>
+    $(function () {
+        sideBerFixed(".details-con-left",".details-con");
+        function sideBerFixed(obj,all) {
+            let articlesList = $(obj);
+            let sideOffset = articlesList.offset().top;
+            let allHeight = $(all).height();
+            let sideHeight = articlesList.height();
+            let fixedHeight = allHeight - sideHeight;
+            $(window).scroll(function () {
+                let scroll = $("html,body").scrollTop();
+                let h = scroll - fixedHeight- ( sideOffset - 52) ;
+                if (scroll > 0 && h < 0){
+                    articlesList.css({
+                        top:0,
+                        position:"fixed",
+                    });
+                }
+                else if (h >= 0) {
+                    articlesList.css({
+                        top: fixedHeight - 52,
+                        position:"relative",
+                    });
+                }
+                else {
+                    articlesList.css({
+                        top: 0,
+                        position:"relative",
+                    });
+                }
+            })
+        }
+    });
+</script>
 </body>
 </html>

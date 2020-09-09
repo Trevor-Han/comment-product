@@ -290,8 +290,8 @@ input[type='search'] {
 }
 
 /*由于iframe，因此单独设置产品详情页响应的宽度*/
-@media screen and (max-width:1041px){
-    /*产品详情页的图片和侧边导航栏缩放*/
+/*@media screen and (max-width:1041px){
+    !*产品详情页的图片和侧边导航栏缩放*!
     .product-mask .product-mask-con{
         width: 100% !important;
         max-width: 925px!important;
@@ -306,13 +306,13 @@ input[type='search'] {
 }
 
 @media screen and (max-width:1024px){
-    /*通用宽度*/
+    !*通用宽度*!
     .all-in{
         width: 90% !important;
         min-width: 925px!important;
     }
 
-    /***************底部导航栏*****************/
+    !***************底部导航栏*****************!
     .footer .footer-nav{
         width: 90% !important;
         min-width: 925px;
@@ -336,27 +336,23 @@ input[type='search'] {
         width: 90% !important;
         min-width: 925px!important;
     }
-    /******************菜单导航适配******************/
+    !******************菜单导航适配******************!
     .mainNav{
-        height: 80px!important;
+        height:52px!important;
     }
     .mainNav .mainNav-con .mainNav-left a{
-        margin-top: 20px!important;
-    }
-    .mainNav .mainNav-con .mainNav-left a .logo-right:after{
-        content: "";
-        height: 98% !important;
-        background: #00bebe!important;
+        margin-top: 6px!important;
     }
     .mainNav .mainNav-left a .logo-left img {
-        width: 205.78px!important;
-        margin-top: -5px!important;
+        width: 190px!important;
+        margin-top: -4px!important;
     }
     .mainNav .mainNav-con .mainNav-left a{
         min-width: 317px!important;
     }
     .mainNav .mainNav-con .mainNav-left a .logo-left p{
         font-size: 12px!important;
+        margin-top: -4px!important;
     }
     .mainNav .mainNav-con .mainNav-left a .logo-left .big{
         display: none;
@@ -370,24 +366,47 @@ input[type='search'] {
     }
     .mainNav .mainNav-con .mainNav-left a .logo-right .small{
         display: block;
+        position: relative;
+        top:3px;
     }
     .mainNav .mainNav-con .mainNav-left a .logo-right .small p {
-        font-size: 16px;
+        font-size: 16.72px;
         text-align: right;
         color: #00bebe;
         font-weight: 400;
-        line-height: 12px;
-        margin-top: 3px;
+        line-height: 10px;
+        margin-top: 2px;
+    }
+    .mainNav .mainNav-con .mainNav-left a .logo-right .small p:after {
+        position: absolute;
+        content: "";
+        left: -1px;
+        top: -1px;
+        width: 15px;
+        height: 15px;
+        background: url(http://localhost:8020/comment-product/%E6%96%B0%E7%89%88%E5%AE%98%E7%BD%91/images/icon/phone.svg) no-repeat center center / cover;
     }
     .mainNav .mainNav-con .mainNav-left a .logo-right .small span{
+        display: block;
         color: #00bebe!important;
-        font-size: 18px!important;
+        font-size: 17.88px!important;
+        margin-top: 10px;
+        line-height: 16px;
+    }
+    .mainNav .mainNav-con .mainNav-left a .logo-right{
+        height: 45px;
+    }
+    .mainNav .mainNav-con .mainNav-left a .logo-right:after{
+        content: "";
+        height: 87% !important;
+        background: #00bebe!important;
+        top: 1px!important;
     }
     .mainNav .mainNav-con .mainNav-right ul{
-        height: 80px!important;
+        height: 52px!important;
     }
     .mainNav .mainNav-con .mainNav-right ul li{
-        line-height: 80px!important;
+        line-height: 52px!important;
     }
     .mainNav .mainNav-con .mainNav-right .main-phone{
         display: none;
@@ -397,23 +416,23 @@ input[type='search'] {
         min-width: 925px!important;
     }
 
-    /***************首页适配*****************/
-    /*四大应用*/
+    !***************首页适配*****************!
+    !*四大应用*!
     .major{
         height: 200px!important;
     }
-    /*应用领域*/
+    !*应用领域*!
     .fleld-con ul li{
         height: auto!important;
     }
     .fleld-con ul li img{
         display: block;
     }
-    /*品牌研发*/
+    !*品牌研发*!
     .brand .brand-in .brand-con ul li{
         height: 193px!important;
     }
-    /*澳镭简介*/
+    !*澳镭简介*!
     .aooled .aooled-in .aooled-con .aooled-con-right p{
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -427,7 +446,7 @@ input[type='search'] {
         font-size: 12px!important;
     }
 
-    /****************产品中心适配 product.html****************/
+    !****************产品中心适配 product.html****************!
     .productSeries .product-con .series-list ul li a .product-mask{
         width: 112px!important;
         height: 112px!important;
@@ -459,7 +478,7 @@ input[type='search'] {
         line-height: 31px!important;
     }
 
-    /****************产品列表 product-details.html****************/
+    !****************产品列表 product-details.html****************!
     .product-details .product-details-con .product-details-list ul li{
         width: 300px!important;
         height: 366.67px!important;
@@ -476,13 +495,13 @@ input[type='search'] {
     .product-details .product-details-con .product-details-list ul li a .the-details-bottom p{
         margin-top: 15px!important;
     }
-    /****************应用领域细分适配 application.html****************/
+    !****************应用领域细分适配 application.html****************!
     .application .application-in ul li{
         width: 296px!important;
         height: 222px!important;
     }
 
-    /****************工程案例适配 case.html****************/
+    !****************工程案例适配 case.html****************!
     .case .case-in .main-case ul li{
         width: 300px!important;
         height: 300px!important;
@@ -517,7 +536,7 @@ input[type='search'] {
         bottom: 0!important;
     }
 
-    /****************文章适配 articles.html、main-case-news.html、common-case-news.html ****************/
+    !****************文章适配 articles.html、main-case-news.html、common-case-news.html ****************!
     .navigation .search1-bar-center{
         overflow: hidden;
         text-overflow:ellipsis;
@@ -527,7 +546,7 @@ input[type='search'] {
         display: none!important;
     }
 
-    /****************走进澳镭适配 about.html****************/
+    !****************走进澳镭适配 about.html****************!
     .about-us .about-us-in .about-con .about-services li{
         width: 297px!important;
         height: 243px!important;
@@ -546,7 +565,7 @@ input[type='search'] {
         line-height: 20px!important;
     }
 
-    /****************新闻中心适配 news.html****************/
+    !****************新闻中心适配 news.html****************!
     .news .news-con{
         width: 90% !important;
         max-width: 925px!important;
@@ -571,7 +590,7 @@ input[type='search'] {
         height: 450px!important;
     }
 
-    /****************新闻列表页适配 news-list.html****************/
+    !****************新闻列表页适配 news-list.html****************!
     .news-list .news-list-con .news-item{
         width:102% !important;
         max-width: 950px!important;
@@ -586,15 +605,15 @@ input[type='search'] {
         white-space: nowrap;
     }
 
-    /****************案例节选适配 case-excerpts.html****************/
+    !****************案例节选适配 case-excerpts.html****************!
     .case-excerpts .case-excerpts-in .excerpts-box li a{
         font-size: 12px!important;
     }
 
-    /****************合作品牌brand.html****************/
+    !****************合作品牌brand.html****************!
     .trademark .trademark-in .trademark-box li{
         width: 225px!important;
         height: 155px!important;
     }
-}
+}*/
 

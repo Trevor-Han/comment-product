@@ -4,6 +4,7 @@ $(function () {
     headerScroll();
     fontClick();
     recommendClick();
+
     //iframe弹窗层
     let top = 0;
     let $nav = $("body");
@@ -14,31 +15,45 @@ $(function () {
         if (windowWidth <=1024) {
             layer.open({
                 type: 2,
-                title: 'aoo-led',
+                title: '',
                 shadeClose: true,
-                shade: 0.7,
+                shade: [1, '#525252'],
                 area: ['100%', '100%'],
                 content: $(this).attr('href'),
-                skin: 'demo-class'
+                skin: 'demo-class',
+                success: function(layero, index){
+                    let theLeft = parseInt($(layero).css("left"));
+                    $(".layer-close").css({
+                        right:theLeft,
+                        display:"block"
+                    });
+                }
+
             });
         }
         else if(windowWidth > 1024){
             layer.open({
                 type: 2,
-                title: 'aoo-led',
+                title: '',
                 shadeClose: true,
-                shade: 0.7,
-                area: ['1280px', '100%'],
+                shade: [1, '#525252'],
+                area: ['1100px', '100%'],
                 content: $(this).attr('href'),
-                skin: 'demo-class'
+                skin: 'demo-class',
+               success: function(layero, index){
+                   let theLeft = parseInt($(layero).css("left"));
+                   $(".layer-close").css({
+                       right:theLeft - 53,
+                       display:"block"
+                   });
+               }
             });
         }
     });
-    $(document).on('click', '.layui-layer-setwin', function (event) {
+    $(".layer-close").click(function (e) {
+        layer.closeAll();
         getPopDown();
-    });
-    $(document).on('click', '.layui-layer-shade', function (event) {
-        getPopDown();
+        $(this).css("display","none");
     });
     //记录window滚动高度
     function getPopup() {

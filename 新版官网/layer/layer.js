@@ -437,7 +437,7 @@
                     n.find("." + l[7]).on("click", e),
                 a.shadeClose && i("#layui-layer-shade" + t.index).on("click",
                     function() {
-                        r.close(t.index)
+                        // r.close(t.index)
                     }),
                     n.find(".layui-layer-min").on("click",
                         function() {
