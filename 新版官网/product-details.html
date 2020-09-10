@@ -264,7 +264,7 @@
                           <p>进一步了解</p><span>></span>
                       </div>
                   </a>
-                  <div class="btn"></div>
+                  <button class="btn"  data-clipboard-text="product-description.html"></button>
               </li>
               <li>
                 <a href="product-description.html" class="trigger">
@@ -278,6 +278,7 @@
                         <p>进一步了解</p><span>></span>
                     </div>
                 </a>
+                  <button class="btn"  data-clipboard-text="description.html"></button>
             </li>
               <li>
                     <a href="product-description.html" class="trigger">
@@ -292,6 +293,7 @@
                             <p>进一步了解</p><span>></span>
                         </div>
                     </a>
+                  <button class="btn"  data-clipboard-text="product.html"></button>
                 </li>
               <li>
                   <a href="product-description.html" class="trigger">
@@ -305,6 +307,7 @@
                             <p>进一步了解</p><span>></span>
                         </div>
                     </a>
+                  <button class="btn"  data-clipboard-text="news.html"></button>
                 </li>
               <li>
                   <a href="product-description.html" class="trigger">
@@ -319,6 +322,7 @@
                             <p>进一步了解</p><span>></span>
                         </div>
                     </a>
+                  <button class="btn"  data-clipboard-text="news-list.html"></button>
                 </li>
             </ul>
         </div>
@@ -1055,18 +1059,25 @@
 <script src="layer/layer.js"></script>
 <script src="js/aoo.js"></script>
 <script>
-    let clipboard = new ClipboardJS('.btn', {
-        text: function() {
-            return $(".trigger").attr('href');
-        }
-    });
+    let clipboard = new ClipboardJS(".btn");
     clipboard.on('success', function(e) {
-        layer.tips('已复制', '.product-details-list .btn',{
-            tips: 1,
+        // console.log(e);
+        layer.tips('复制成功', e.trigger ,{
+            tips:[4,"#30233"],
+            time:2000
+        });
+        $(".layui-layer").css({
+            overflow:"inherit"
         });
     });
     clipboard.on('error', function(e) {
-        console.log(e);
+        layer.tips('错误', e.trigger ,{
+            tips:[4,"red"],
+            time:2000
+        });
+        $(".layui-layer").css({
+            overflow:"inherit"
+        });
     });
 </script>
 
