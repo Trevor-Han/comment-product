@@ -263,6 +263,19 @@
                           <h6>多重控温，亮度突破级线</h6>
                           <p>进一步了解</p><span>></span>
                       </div>
+                      <div class="control-video">
+                          <video class="the-video">
+                              <source src="http://vod-icbu.alicdn.com/7c569251818fbca4/2iuMyohqEDh4RZzA8zX/TBWSgHun8JcLKf33Dp1_277741200496_hd_hq.mp4" >
+                          </video>
+                          <div class="control">
+                              <div class="progress">
+                                  <div class="line"></div>
+                              </div>
+                              <div class="time">
+                                  <span class="current-time">00:00:00</span>
+                              </div>
+                          </div>
+                      </div>
                   </a>
                   <button class="btn"  data-clipboard-text="product-description.html"></button>
               </li>
@@ -390,7 +403,7 @@
     </div>
 </div>
 <div class=" recommend">
-    <div class="recommend-con recommend-click">
+    <div class="recommend-con recommend-click all-in">
         <div class="recommend-left-other">
             <ul>
                 <li><p>LED面板灯</p></li>
@@ -402,6 +415,7 @@
                 <li><p>LED天花灯</p></li>
                 <li><p>LED轨道灯</p></li>
                 <li><p>LED筒灯</p></li>
+                <li><p>LED太阳能</p></li>
             </ul>
         </div>
         <div class="recommend-fade">
@@ -891,6 +905,60 @@
                     </ul>
                 </div>
             </div>
+            <div class="recommend-right">
+                <div class="recommend-right-top">
+                    <h1>其他LED灯具产品推荐</h1>
+                    <span>
+                    <a href="">水立方系列</a>
+                    <a href="">CYB系列</a>
+                    <a href="">黑金刚系列</a>
+                    <a href="">紫铜系列</a>
+                </span>
+                </div>
+                <div class="recommend-right-middle">
+                    <ul>
+                        <li>
+                            <a href="product-details.html">
+                                <img src="images/major/major-1.png" alt="">
+                                <p>星脉系列LED工矿灯</p>
+                                <span>编号： A-GKD-XMDL</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html">
+                                <img src="images/major/major-2.png" alt="">
+                                <p>黑豹精灵LED泛光灯</p>
+                                <span>编号： A-GKD-XMDL</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html">
+                                <img src="images/major/major-3.png" alt="">
+                                <p>虎鲸系列LED路灯</p>
+                                <span>编号： A-GKD-XMDL</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html">
+                                <img src="images/major/major-4.png" alt="">
+                                <p>海洋之星LED投光灯</p>
+                                <span>编号： A-GKD-XMDL</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="recommend-right-bottom">
+                    <ul>
+                        <li>他们都选择了澳镭LED工矿灯</li>
+                        <li>融创集团 </li>
+                        <li>夏西安防电子 </li>
+                        <li>东升神骏燃气具 </li>
+                        <li>三龙线业 </li>
+                        <li>鑫鼎钢材工业园 </li>
+                        <li>宝钢集团</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -1058,28 +1126,7 @@
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="layer/layer.js"></script>
 <script src="js/aoo.js"></script>
-<script>
-    let clipboard = new ClipboardJS(".btn");
-    clipboard.on('success', function(e) {
-        // console.log(e);
-        layer.tips('复制成功', e.trigger ,{
-            tips:[4,"#30233"],
-            time:2000
-        });
-        $(".layui-layer").css({
-            overflow:"inherit"
-        });
-    });
-    clipboard.on('error', function(e) {
-        layer.tips('错误', e.trigger ,{
-            tips:[4,"red"],
-            time:2000
-        });
-        $(".layui-layer").css({
-            overflow:"inherit"
-        });
-    });
-</script>
-
+<script src="js/video-play.js"></script>
+<script src="js/text-copy.js"></script>
 </body>
 </html>
