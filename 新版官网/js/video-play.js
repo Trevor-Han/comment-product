@@ -2,7 +2,7 @@ $(function () {
     let oControl = $(".control-video");
     let oVideo = $("video");
     let oCurrentTime = $(".current-time");
-    let oFigure = $(".product-details-list a");
+    let oFigure = $(".the-video");
     let oChange = $(".the-details-top");
     let oLine = $(".line");
     let currentMoveIndex = 0;
@@ -14,24 +14,24 @@ $(function () {
     oChange.mouseenter(function (e) {
         let videoIndex = $(this).parents("li").index();
         let theControl = $(oControl).eq(videoIndex);
-        // oVideo[0].play();
-        theControl.animate({
+        theControl.stop().animate({
             top:0,
             opacity:1,
         });
-        let dis = e.pageY;
+        oVideo[0].play();
+   /*     let dis = e.pageY;
         moveData.push({
             sliderDis: dis,
         });
         moveData[currentMoveIndex].sliderDis += dis;
         console.log(dis);
-        /* if(Math.abs(dis) > 200){
+        /!* if(Math.abs(dis) > 200){
              theControl.stop().animate({
                  top:"-100%",
                  opacity:0
              },500);
              oVideo[0].pause();
-         }*/
+         }*!/*/
 
     });
     oFigure.mouseleave(function () {
